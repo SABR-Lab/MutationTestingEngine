@@ -1,0 +1,202 @@
+{
+  "timestamp": "20250731_151140",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/120",
+    "timestamp": "20250731_151140",
+    "tester_version": "1.0",
+    "total_operators_tested": 7,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "survival_rate": 0.2222222222222222
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/120",
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplh1n7x34.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmplh1n7x34.py\", line 63, in check\n    assert candidate([-3, 2, 1, 2, -1, -2, 1], 1) == [2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.468746",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == -1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == -1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpsxp1yu06.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmpsxp1yu06.py\", line 73, in check\n    assert candidate([1, 2, 3, -23, 243, -400, 0], 0) == []\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.504888",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k != 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k != 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqqr86_pu.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmpqqr86_pu.py\", line 61, in check\n    assert candidate([-3, -4, 5], 3) == [-4, -3, 5]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.541624",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb9x6mz4w.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmpb9x6mz4w.py\", line 61, in check\n    assert candidate([-3, -4, 5], 3) == [-4, -3, 5]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.589259",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo2zamjey.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmpo2zamjey.py\", line 73, in check\n    assert candidate([1, 2, 3, -23, 243, -400, 0], 0) == []\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.637322",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplifp_g2l.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmplifp_g2l.py\", line 61, in check\n    assert candidate([-3, -4, 5], 3) == [-4, -3, 5]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.674027",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 1:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwo_apo11.py\", line 80, in <module>\n    check(maximum)\n    ~~~~~^^^^^^^^^\n  File \"/tmp/tmpwo_apo11.py\", line 63, in check\n    assert candidate([-3, 2, 1, 2, -1, -2, 1], 1) == [2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.712657",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"\"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"\"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:40.729050",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+            "mutated_code": "def maximum(arr, k):\n    \"\"\"X\"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "mutated_complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\ndef maximum(arr, k):\n    \"\"\"X\"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:40.744282",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n",
+      "canonical_solution": "    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([-3, -4, 5], 3) == [-4, -3, 5]\n    assert candidate([4, -4, 4], 2) == [4, 4]\n    assert candidate([-3, 2, 1, 2, -1, -2, 1], 1) == [2]\n    assert candidate([123, -123, 20, 0 , 1, 2, -3], 3) == [2, 20, 123]\n    assert candidate([-123, 20, 0 , 1, 2, -3], 4) == [0, 1, 2, 20]\n    assert candidate([5, 15, 0, 3, -13, -8, 0], 7) == [-13, -8, 0, 0, 3, 5, 15]\n    assert candidate([-1, 0, 2, 5, 3, -10], 2) == [3, 5]\n    assert candidate([1, 0, 5, -7], 1) == [5]\n    assert candidate([4, -4], 2) == [-4, 4]\n    assert candidate([-10, 10], 2) == [-10, 10]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([1, 2, 3, -23, 243, -400, 0], 0) == []\n\n",
+      "entry_point": "maximum",
+      "complete_code": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n    if k == 0:\n        return []\n    arr.sort()\n    ans = arr[-k:]\n    return ans\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 7,
+      "execution_timestamp": "2025-07-31T15:11:40.745423"
+    }
+  }
+}

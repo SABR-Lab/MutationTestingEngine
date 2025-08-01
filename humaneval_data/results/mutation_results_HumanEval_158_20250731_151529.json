@@ -1,0 +1,171 @@
+{
+  "timestamp": "20250731_151529",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/158",
+    "timestamp": "20250731_151529",
+    "tester_version": "1.0",
+    "total_operators_tested": 6,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 7,
+    "killed_mutations": 5,
+    "mutation_score": 0.7142857142857143,
+    "survival_rate": 0.2857142857142857
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/158",
+    "original_passes": true,
+    "total_mutations": 7,
+    "killed_mutations": 5,
+    "mutation_score": 0.7142857142857143,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[1]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[1]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6fruqe51.py\", line 45, in <module>\n    check(find_max)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmp6fruqe51.py\", line 27, in check\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: t1\n",
+            "timestamp": "2025-07-31T15:15:29.535047",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[-1]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[-1]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpscw7el83.py\", line 45, in <module>\n    check(find_max)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpscw7el83.py\", line 27, in check\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: t1\n",
+            "timestamp": "2025-07-31T15:15:29.569276",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (len(set(x)), x))[0]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (len(set(x)), x))[0]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9zhdzifa.py\", line 45, in <module>\n    check(find_max)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmp9zhdzifa.py\", line 27, in check\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: t1\n",
+            "timestamp": "2025-07-31T15:15:29.607652",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppn4u4_v1.py\", line 45, in <module>\n    check(find_max)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmppn4u4_v1.py\", line 27, in check\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: t1\n",
+            "timestamp": "2025-07-31T15:15:29.643332",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[1]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[1]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprrmutml8.py\", line 45, in <module>\n    check(find_max)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmprrmutml8.py\", line 27, in check\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: t1\n",
+            "timestamp": "2025-07-31T15:15:29.681139",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"\"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[0]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"\"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[0]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:15:29.702844",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+            "mutated_code": "def find_max(words):\n    \"\"\"X\"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[0]",
+            "mutated_complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\ndef find_max(words):\n    \"\"\"X\"\"\"\n    return sorted(words, key=lambda x: (-len(set(x)), x))[0]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:15:29.725035",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n",
+      "canonical_solution": "    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert (candidate([\"name\", \"of\", \"string\"]) == \"string\"), \"t1\"\n    assert (candidate([\"name\", \"enam\", \"game\"]) == \"enam\"), 't2'\n    assert (candidate([\"aaaaaaa\", \"bb\", \"cc\"]) == \"aaaaaaa\"), 't3'\n    assert (candidate([\"abc\", \"cba\"]) == \"abc\"), 't4'\n    assert (candidate([\"play\", \"this\", \"game\", \"of\",\"footbott\"]) == \"footbott\"), 't5'\n    assert (candidate([\"we\", \"are\", \"gonna\", \"rock\"]) == \"gonna\"), 't6'\n    assert (candidate([\"we\", \"are\", \"a\", \"mad\", \"nation\"]) == \"nation\"), 't7'\n    assert (candidate([\"this\", \"is\", \"a\", \"prrk\"]) == \"this\"), 't8'\n\n    # Check some edge cases that are easy to work out by hand.\n    assert (candidate([\"b\"]) == \"b\"), 't9'\n    assert (candidate([\"play\", \"play\", \"play\"]) == \"play\"), 't10'\n\n",
+      "entry_point": "find_max",
+      "complete_code": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n    return sorted(words, key = lambda x: (-len(set(x)), x))[0]\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 6,
+      "execution_timestamp": "2025-07-31T15:15:29.725862"
+    }
+  }
+}

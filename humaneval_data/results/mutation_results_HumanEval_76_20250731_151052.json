@@ -1,0 +1,296 @@
+{
+  "timestamp": "20250731_151052",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/76",
+    "timestamp": "20250731_151052",
+    "tester_version": "1.0",
+    "total_operators_tested": 7,
+    "operators_with_errors": 2
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 15,
+    "killed_mutations": 11,
+    "mutation_score": 0.7333333333333333,
+    "survival_rate": 0.2666666666666667
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/76",
+    "original_passes": true,
+    "total_mutations": 15,
+    "killed_mutations": 11,
+    "mutation_score": 0.7333333333333333,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 5,
+        "killed_mutations": 4,
+        "survival_rate": 0.2,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 2:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 2:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxakd9eq7.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpxakd9eq7.py\", line 36, in check\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:11.715371",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 0:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 0:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:11.731624",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 2\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 2\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmph3m9soy9.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmph3m9soy9.py\", line 46, in check\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (also good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:11.765816",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 0\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 0\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxfegewre.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpxfegewre.py\", line 46, in check\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (also good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:11.799374",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 2\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 2\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp85w2h_s4.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp85w2h_s4.py\", line 39, in check\n    assert candidate(9, 3)==True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:11.832972",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 0\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 0\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Execution timeout",
+            "timestamp": "2025-07-31T15:10:21.845124",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 6,
+        "mutations_tested": 6
+      },
+      "Mult->Div": {
+        "error": "division by zero"
+      },
+      "Mult->Pow": {
+        "error": "division by zero"
+      },
+      "Eq->NotEq": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n != 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n != 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptb0ir48c.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptb0ir48c.py\", line 36, in check\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:41.900322",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x != 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x != 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphw2wc495.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmphw2wc495.py\", line 46, in check\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (also good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:41.929750",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power != x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power != x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptvn4cw5_.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptvn4cw5_.py\", line 36, in check\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:41.961347",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Lt->Gt": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power > x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power > x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp09qaxmby.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp09qaxmby.py\", line 36, in check\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:41.989871",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpydwm2qqy.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpydwm2qqy.py\", line 46, in check\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (also good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:42.023327",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppvldowpb.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppvldowpb.py\", line 36, in check\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:42.055069",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 0:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 0:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:42.070298",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 0\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 0\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptja4i_a1.py\", line 54, in <module>\n    check(is_simple_power)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptja4i_a1.py\", line 46, in check\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (also good for debugging!)\n",
+            "timestamp": "2025-07-31T15:10:42.101859",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 0\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if n == 1:\n        return x == 1\n    power = 0\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": false,
+            "execution_output": "Execution timeout",
+            "timestamp": "2025-07-31T15:10:52.113299",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"\"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"\"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:52.130961",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+            "mutated_code": "def is_simple_power(x, n):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "mutated_complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\ndef is_simple_power(x, n):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return x == 1\n    power = 1\n    while power < x:\n        power = power * n\n    return power == x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:52.146290",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n",
+      "canonical_solution": "    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(16, 2)== True, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(143214, 16)== False, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(4, 2)==True, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(9, 3)==True, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(16, 4)==True, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(24, 2)==False, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(128, 4)==False, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(12, 6)==False, \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(1, 1)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert candidate(1, 12)==True, \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+      "entry_point": "is_simple_power",
+      "complete_code": "\ndef is_simple_power(x, n):\n    \"\"\"Your task is to write a function that returns true if a number x is a simple\n    power of n and false in other cases.\n    x is a simple power of n if n**int=x\n    For example:\n    is_simple_power(1, 4) => true\n    is_simple_power(2, 2) => true\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n    is_simple_power(3, 1) => false\n    is_simple_power(5, 3) => false\n    \"\"\"\n    if (n == 1): \n        return (x == 1) \n    power = 1\n    while (power < x): \n        power = power * n \n    return (power == x) \n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 7,
+      "execution_timestamp": "2025-07-31T15:10:52.147093"
+    }
+  }
+}

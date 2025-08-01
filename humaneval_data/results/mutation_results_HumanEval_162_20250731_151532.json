@@ -1,0 +1,153 @@
+{
+  "timestamp": "20250731_151532",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/162",
+    "timestamp": "20250731_151532",
+    "tester_version": "1.0",
+    "total_operators_tested": 4,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 5,
+    "killed_mutations": 3,
+    "mutation_score": 0.6,
+    "survival_rate": 0.4
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/162",
+    "original_passes": true,
+    "total_mutations": 5,
+    "killed_mutations": 3,
+    "mutation_score": 0.6,
+    "mutation_results": {
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps826qy1p.py\", line 35, in <module>\n    check(string_to_md5)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmps826qy1p.py\", line 22, in check\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:15:32.080589",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:15:32.104305",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('')).hexdigest() if text else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('')).hexdigest() if text else None",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprevf8f53.py\", line 35, in <module>\n    check(string_to_md5)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmprevf8f53.py\", line 22, in check\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n           ~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmprevf8f53.py\", line 17, in string_to_md5\n    return hashlib.md5(text.encode('')).hexdigest() if text else None\n                       ~~~~~~~~~~~^^^^\nLookupError: unknown encoding: \n",
+            "timestamp": "2025-07-31T15:15:32.148633",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"X\"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"X\"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:15:32.176367",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('X')).hexdigest() if text else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('X')).hexdigest() if text else None",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4pi9zt4i.py\", line 35, in <module>\n    check(string_to_md5)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4pi9zt4i.py\", line 22, in check\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n           ~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4pi9zt4i.py\", line 17, in string_to_md5\n    return hashlib.md5(text.encode('X')).hexdigest() if text else None\n                       ~~~~~~~~~~~^^^^^\nLookupError: unknown encoding: X\n",
+            "timestamp": "2025-07-31T15:15:32.219286",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Ternary Condition": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if True else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if True else None",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwyyj7eeh.py\", line 35, in <module>\n    check(string_to_md5)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwyyj7eeh.py\", line 23, in check\n    assert candidate('') == None\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:15:32.307449",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+            "mutated_code": "def string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if False else None",
+            "mutated_complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if False else None",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpcmnkncqq.py\", line 35, in <module>\n    check(string_to_md5)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcmnkncqq.py\", line 22, in check\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:15:32.369112",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n",
+      "canonical_solution": "    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    assert candidate('') == None\n    assert candidate('A B C') == '0ef78513b0cb8cef12743f5aeb35f888'\n    assert candidate('password') == '5f4dcc3b5aa765d61d8327deb882cf99'\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n",
+      "entry_point": "string_to_md5",
+      "complete_code": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n    import hashlib\n    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 4,
+      "execution_timestamp": "2025-07-31T15:15:32.369675"
+    }
+  }
+}

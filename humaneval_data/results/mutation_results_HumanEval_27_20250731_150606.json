@@ -1,0 +1,100 @@
+{
+  "timestamp": "20250731_150606",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/27",
+    "timestamp": "20250731_150606",
+    "tester_version": "1.0",
+    "total_operators_tested": 3,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "survival_rate": 0.6666666666666667
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/27",
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "mutation_results": {
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return string.swapcase()\n",
+            "mutated_code": "def flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return",
+            "mutated_complete_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvp_f_9wr.py\", line 32, in <module>\n    check(flip_case)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpvp_f_9wr.py\", line 24, in check\n    assert candidate('') == ''\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:06:06.499564",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return string.swapcase()\n",
+            "mutated_code": "def flip_case(string: str) -> str:\n    \"\"\"\"\"\"\n    return string.swapcase()",
+            "mutated_complete_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\ndef flip_case(string: str) -> str:\n    \"\"\"\"\"\"\n    return string.swapcase()",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:06:06.523625",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return string.swapcase()\n",
+            "mutated_code": "def flip_case(string: str) -> str:\n    \"\"\"X\"\"\"\n    return string.swapcase()",
+            "mutated_complete_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\ndef flip_case(string: str) -> str:\n    \"\"\"X\"\"\"\n    return string.swapcase()",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:06:06.545319",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+      "canonical_solution": "    return string.swapcase()\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate('Hello!') == 'hELLO!'\n    assert candidate('These violent delights have violent ends') == 'tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS'\n",
+      "entry_point": "flip_case",
+      "complete_code": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n    return string.swapcase()\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 3,
+      "execution_timestamp": "2025-07-31T15:06:06.546278"
+    }
+  }
+}

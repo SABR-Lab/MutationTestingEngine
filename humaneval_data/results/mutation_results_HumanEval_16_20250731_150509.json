@@ -1,0 +1,100 @@
+{
+  "timestamp": "20250731_150509",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/16",
+    "timestamp": "20250731_150509",
+    "tester_version": "1.0",
+    "total_operators_tested": 3,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "survival_rate": 0.6666666666666667
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/16",
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "mutation_results": {
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string.lower()))\n",
+            "mutated_code": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return",
+            "mutated_complete_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6_op1eb7.py\", line 38, in <module>\n    check(count_distinct_characters)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6_op1eb7.py\", line 28, in check\n    assert candidate('') == 0\n           ^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:09.085128",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string.lower()))\n",
+            "mutated_code": "def count_distinct_characters(string: str) -> int:\n    \"\"\"\"\"\"\n    return len(set(string.lower()))",
+            "mutated_complete_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\ndef count_distinct_characters(string: str) -> int:\n    \"\"\"\"\"\"\n    return len(set(string.lower()))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:09.109046",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string.lower()))\n",
+            "mutated_code": "def count_distinct_characters(string: str) -> int:\n    \"\"\"X\"\"\"\n    return len(set(string.lower()))",
+            "mutated_complete_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\ndef count_distinct_characters(string: str) -> int:\n    \"\"\"X\"\"\"\n    return len(set(string.lower()))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:09.135521",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n",
+      "canonical_solution": "    return len(set(string.lower()))\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == 0\n    assert candidate('abcde') == 5\n    assert candidate('abcde' + 'cade' + 'CADE') == 5\n    assert candidate('aaaaAAAAaaaa') == 1\n    assert candidate('Jerry jERRY JeRRRY') == 5\n",
+      "entry_point": "count_distinct_characters",
+      "complete_code": "\n\ndef count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    return len(set(string.lower()))\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 3,
+      "execution_timestamp": "2025-07-31T15:05:09.136289"
+    }
+  }
+}

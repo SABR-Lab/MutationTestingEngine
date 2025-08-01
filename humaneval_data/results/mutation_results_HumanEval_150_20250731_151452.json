@@ -1,0 +1,308 @@
+{
+  "timestamp": "20250731_151452",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/150",
+    "timestamp": "20250731_151452",
+    "tester_version": "1.0",
+    "total_operators_tested": 9,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 17,
+    "killed_mutations": 13,
+    "mutation_score": 0.7647058823529411,
+    "survival_rate": 0.23529411764705888
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/150",
+    "original_passes": true,
+    "total_mutations": 17,
+    "killed_mutations": 13,
+    "mutation_score": 0.7647058823529411,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 6,
+        "killed_mutations": 5,
+        "survival_rate": 0.16666666666666666,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 2:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 2:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpeaiiudgi.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpeaiiudgi.py\", line 43, in check\n    assert candidate(1, 2, 0) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.304401",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 0:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 0:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp8nxud4ts.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp8nxud4ts.py\", line 43, in check\n    assert candidate(1, 2, 0) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.363690",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(3, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(3, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:52.396700",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(1, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(1, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgtugv5ck.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpgtugv5ck.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.466192",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 1:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 1:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpf7cv3m7x.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpf7cv3m7x.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.510844",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == -1:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == -1:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppw9lrmur.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmppw9lrmur.py\", line 33, in check\n    assert candidate(15, 8, 5) == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.552319",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 6,
+        "mutations_tested": 6
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n // i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n // i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpatxdvit6.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpatxdvit6.py\", line 33, in check\n    assert candidate(15, 8, 5) == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.595527",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n != 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n != 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpx4trtc2d.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpx4trtc2d.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.630606",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i != 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i != 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpbiwyh1vh.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpbiwyh1vh.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.664593",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Break->Continue": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            continue\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            continue\n    else:\n        return x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:52.682433",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplin3dfbg.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmplin3dfbg.py\", line 43, in check\n    assert candidate(1, 2, 0) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.716993",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp1extenmd.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp1extenmd.py\", line 33, in check\n    assert candidate(15, 8, 5) == 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.753805",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfwvsd6kz.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpfwvsd6kz.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.786537",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 1:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 1:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpnags4d_m.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpnags4d_m.py\", line 32, in check\n    assert candidate(7, 34, 12) == 34\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.820221",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 0:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n\n    \"\"\"\n    if n == 0:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp13mq29dp.py\", line 51, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp13mq29dp.py\", line 43, in check\n    assert candidate(1, 2, 0) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:52.858901",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"\"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"\"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:52.879455",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+            "mutated_code": "def x_or_y(n, x, y):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "mutated_complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\ndef x_or_y(n, x, y):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:52.901721",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n",
+      "canonical_solution": "    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(7, 34, 12) == 34\n    assert candidate(15, 8, 5) == 5\n    assert candidate(3, 33, 5212) == 33\n    assert candidate(1259, 3, 52) == 3\n    assert candidate(7919, -1, 12) == -1\n    assert candidate(3609, 1245, 583) == 583\n    assert candidate(91, 56, 129) == 129\n    assert candidate(6, 34, 1234) == 1234\n    \n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(1, 2, 0) == 0\n    assert candidate(2, 2, 0) == 2\n\n",
+      "entry_point": "x_or_y",
+      "complete_code": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 9,
+      "execution_timestamp": "2025-07-31T15:14:52.902668"
+    }
+  }
+}

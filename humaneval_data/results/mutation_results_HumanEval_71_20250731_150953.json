@@ -1,0 +1,523 @@
+{
+  "timestamp": "20250731_150953",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/71",
+    "timestamp": "20250731_150953",
+    "tester_version": "1.0",
+    "total_operators_tested": 13,
+    "operators_with_errors": 1
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 31,
+    "killed_mutations": 29,
+    "mutation_score": 0.9354838709677419,
+    "survival_rate": 0.06451612903225812
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/71",
+    "original_passes": true,
+    "total_mutations": 31,
+    "killed_mutations": 29,
+    "mutation_score": 0.9354838709677419,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 8,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -2\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -2\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_oe4o_qw.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_oe4o_qw.py\", line 35, in check\n    assert candidate(1, 2, 10) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:52.569081",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -0\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -0\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfk7t14jc.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfk7t14jc.py\", line 35, in check\n    assert candidate(1, 2, 10) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:52.604447",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 3\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 3\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzzjfgnfc.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpzzjfgnfc.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.639799",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 1\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 1\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpi57sbr26.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpi57sbr26.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.672096",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 1.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 1.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphysjvie3.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmphysjvie3.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.710730",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** -0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** -0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp91f711hp.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp91f711hp.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.743676",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 3)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 3)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9mli8zol.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp9mli8zol.py\", line 36, in check\n    assert candidate(4, 8, 5) == 8.18\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:52.778509",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 1)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 1)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpur1bs9lt.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpur1bs9lt.py\", line 36, in check\n    assert candidate(4, 8, 5) == 8.18\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:52.813257",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 8,
+        "mutations_tested": 8
+      },
+      "Add->Sub": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a - b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a - b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp34xhehcp.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp34xhehcp.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.849059",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a - c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a - c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpue3mk5y7.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpue3mk5y7.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.886550",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b - c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b - c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo05g_53w.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo05g_53w.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:52.924777",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b - c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b - c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpcnvpx6r6.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcnvpx6r6.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ~~~~~~~~~^^^^^^^^^\n  File \"/tmp/tmpcnvpx6r6.py\", line 28, in triangle_area\n    area = round(area, 2)\nTypeError: type complex doesn't define __round__ method\n",
+            "timestamp": "2025-07-31T15:09:52.959206",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a - b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a - b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphykb_2s1.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmphykb_2s1.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ~~~~~~~~~^^^^^^^^^\n  File \"/tmp/tmphykb_2s1.py\", line 28, in triangle_area\n    area = round(area, 2)\nTypeError: type complex doesn't define __round__ method\n",
+            "timestamp": "2025-07-31T15:09:53.037127",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 5,
+        "mutations_tested": 5
+      },
+      "Sub->Add": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s + a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s + a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb38jlzvd.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpb38jlzvd.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.093032",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s + b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s + b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxlhxm5u1.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpxlhxm5u1.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.171252",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s + c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s + c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpznc5yb5z.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpznc5yb5z.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.232890",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Mult->Div": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) / (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) / (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfoqgtre3.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfoqgtre3.py\", line 36, in check\n    assert candidate(4, 8, 5) == 8.18\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:53.277370",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) / (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) / (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb11w20l1.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpb11w20l1.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.319573",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s / (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s / (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpuh8oob8r.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuh8oob8r.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.359770",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Div->Mult": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) * 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) * 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpehpy5me2.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpehpy5me2.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.398456",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Pow->Mult": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = s * (s - a) * (s - b) * (s - c) * 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = s * (s - a) * (s - b) * (s - c) * 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvds_v30p.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvds_v30p.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.435512",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Pow": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = ((s * (s - a) * (s - b)) ** (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = ((s * (s - a) * (s - b)) ** (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2dhlt55t.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2dhlt55t.py\", line 36, in check\n    assert candidate(4, 8, 5) == 8.18\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:53.469957",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = ((s * (s - a)) ** (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = ((s * (s - a)) ** (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpbuono0gw.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpbuono0gw.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.504734",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s ** (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s ** (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpic4rg32h.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpic4rg32h.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.539439",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "LtEq->GtEq": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b >= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b >= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2s_fbzgd.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2s_fbzgd.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.580968",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c >= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c >= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9iwl371j.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp9iwl371j.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.619445",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c >= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c >= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpd3ko9je4.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpd3ko9je4.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.655240",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Or->And": {
+        "error": "division by zero"
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return 1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return 1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpen_pb3fu.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpen_pb3fu.py\", line 35, in check\n    assert candidate(1, 2, 10) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:53.726412",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpmrdddya2.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpmrdddya2.py\", line 35, in check\n    assert candidate(1, 2, 10) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:53.767325",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpipcwsc48.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpipcwsc48.py\", line 34, in check\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:09:53.805068",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -0\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    \"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -0\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp0lu9bd9x.py\", line 51, in <module>\n    check(triangle_area)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp0lu9bd9x.py\", line 35, in check\n    assert candidate(1, 2, 10) == -1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:53.846122",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"\"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"\"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:53.863735",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+            "mutated_code": "def triangle_area(a, b, c):\n    \"\"\"X\"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "mutated_complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\ndef triangle_area(a, b, c):\n    \"\"\"X\"\"\"\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:53.884237",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n",
+      "canonical_solution": "    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(3, 4, 5) == 6.00, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(1, 2, 10) == -1\n    assert candidate(4, 8, 5) == 8.18\n    assert candidate(2, 2, 2) == 1.73\n    assert candidate(1, 2, 3) == -1\n    assert candidate(10, 5, 7) == 16.25\n    assert candidate(2, 6, 3) == -1\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(1, 1, 1) == 0.43, \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert candidate(2, 2, 10) == -1\n\n",
+      "entry_point": "triangle_area",
+      "complete_code": "\ndef triangle_area(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of\n    the triangle rounded to 2 decimal points if the three sides form a valid triangle. \n    Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area(3, 4, 5) == 6.00\n    triangle_area(1, 2, 10) == -1\n    '''\n    if a + b <= c or a + c <= b or b + c <= a:\n        return -1 \n    s = (a + b + c)/2    \n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    area = round(area, 2)\n    return area\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 13,
+      "execution_timestamp": "2025-07-31T15:09:53.886092"
+    }
+  }
+}

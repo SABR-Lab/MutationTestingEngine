@@ -1,0 +1,367 @@
+{
+  "timestamp": "20250731_150605",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/25",
+    "timestamp": "20250731_150605",
+    "tester_version": "1.0",
+    "total_operators_tested": 10,
+    "operators_with_errors": 2
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 18,
+    "killed_mutations": 12,
+    "mutation_score": 0.6666666666666666,
+    "survival_rate": 0.33333333333333337
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/25",
+    "original_passes": true,
+    "total_mutations": 18,
+    "killed_mutations": 12,
+    "mutation_score": 0.6666666666666666,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 5,
+        "survival_rate": 0.375,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 3\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 3\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp24z682ce.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmp24z682ce.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:15.042027",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 1\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 1\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Execution timeout",
+            "timestamp": "2025-07-31T15:05:25.081091",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 2):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 2):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:25.111337",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 0):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 0):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:25.142298",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7dwl059v.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmp7dwl059v.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:25.186768",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == -1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == -1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptx1qjbpz.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmptx1qjbpz.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:25.229054",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 2\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 2\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpexsw0_lu.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpexsw0_lu.py\", line 53, in check\n    assert candidate(3 * 19) == [3, 19]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:25.272249",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 0\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 0\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Execution timeout",
+            "timestamp": "2025-07-31T15:05:35.283802",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 2:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 2:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:35.312698",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 0:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 0:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqzwjgnqk.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpqzwjgnqk.py\", line 50, in check\n    assert candidate(2) == [2]\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:35.358235",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 10,
+        "mutations_tested": 10
+      },
+      "Add->Sub": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) - 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) - 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpt1u8wb1x.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpt1u8wb1x.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:35.404555",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n // i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n // i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpnkcwecvs.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpnkcwecvs.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:35.445559",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "AddEq->SubEq": {
+        "error": "division by zero"
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i != 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i != 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp77z3zwd9.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmp77z3zwd9.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:45.529991",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Gt->Lt": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n < 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n < 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpja4hsj8o.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpja4hsj8o.py\", line 53, in check\n    assert candidate(3 * 19) == [3, 19]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:45.575277",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "LtEq->GtEq": {
+        "error": "division by zero"
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgv3i_gzs.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpgv3i_gzs.py\", line 50, in check\n    assert candidate(2) == [2]\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:55.667249",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 1:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp5lux1bei.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmp5lux1bei.py\", line 51, in check\n    assert candidate(4) == [2, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:55.722146",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 0):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 0):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:55.756015",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 0\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 0\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Execution timeout",
+            "timestamp": "2025-07-31T15:06:05.767524",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 0:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 0:\n        fact.append(n)\n    return fact",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpagrfos0p.py\", line 63, in <module>\n    check(factorize)\n    ~~~~~^^^^^^^^^^^\n  File \"/tmp/tmpagrfos0p.py\", line 50, in check\n    assert candidate(2) == [2]\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:06:05.813278",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\"\"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\"\"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:06:05.846827",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+            "mutated_code": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\"X\"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "mutated_complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\"X\"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n    if n > 1:\n        fact.append(n)\n    return fact",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:06:05.876184",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n",
+      "canonical_solution": "    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(2) == [2]\n    assert candidate(4) == [2, 2]\n    assert candidate(8) == [2, 2, 2]\n    assert candidate(3 * 19) == [3, 19]\n    assert candidate(3 * 19 * 3 * 19) == [3, 3, 19, 19]\n    assert candidate(3 * 19 * 3 * 19 * 3 * 19) == [3, 3, 3, 19, 19, 19]\n    assert candidate(3 * 19 * 19 * 19) == [3, 19, 19, 19]\n    assert candidate(3 * 2 * 3) == [2, 3, 3]\n",
+      "entry_point": "factorize",
+      "complete_code": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 10,
+      "execution_timestamp": "2025-07-31T15:06:05.877613"
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "timestamp": "20250731_151121",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/100",
+    "timestamp": "20250731_151121",
+    "tester_version": "1.0",
+    "total_operators_tested": 6,
+    "operators_with_errors": 1
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 7,
+    "killed_mutations": 5,
+    "mutation_score": 0.7142857142857143,
+    "survival_rate": 0.2857142857142857
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/100",
+    "original_passes": true,
+    "total_mutations": 7,
+    "killed_mutations": 5,
+    "mutation_score": 0.7142857142857143,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 3 * i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 3 * i for i in range(n)]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp82b41xd7.py\", line 49, in <module>\n    check(make_a_pile)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmp82b41xd7.py\", line 35, in check\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 3\n",
+            "timestamp": "2025-07-31T15:11:21.488441",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 1 * i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 1 * i for i in range(n)]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqd7uiqb_.py\", line 49, in <module>\n    check(make_a_pile)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpqd7uiqb_.py\", line 35, in check\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 3\n",
+            "timestamp": "2025-07-31T15:11:21.519620",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Add->Sub": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n - 2 * i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n - 2 * i for i in range(n)]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqfczzfqk.py\", line 49, in <module>\n    check(make_a_pile)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpqfczzfqk.py\", line 35, in check\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 3\n",
+            "timestamp": "2025-07-31T15:11:21.551924",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Div": {
+        "error": "division by zero"
+      },
+      "Mult->Pow": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2 ** i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2 ** i for i in range(n)]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprp3fcrf9.py\", line 49, in <module>\n    check(make_a_pile)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmprp3fcrf9.py\", line 35, in check\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 3\n",
+            "timestamp": "2025-07-31T15:11:21.632121",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp23llz_jx.py\", line 49, in <module>\n    check(make_a_pile)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmp23llz_jx.py\", line 35, in check\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 3\n",
+            "timestamp": "2025-07-31T15:11:21.670167",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"\"\"\"\n    return [n + 2 * i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"\"\"\"\n    return [n + 2 * i for i in range(n)]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:21.687663",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n",
+            "mutated_code": "def make_a_pile(n):\n    \"\"\"X\"\"\"\n    return [n + 2 * i for i in range(n)]",
+            "mutated_complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\ndef make_a_pile(n):\n    \"\"\"X\"\"\"\n    return [n + 2 * i for i in range(n)]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:21.704744",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n",
+      "canonical_solution": "    return [n + 2*i for i in range(n)]\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(3) == [3, 5, 7], \"Test 3\"\n    assert candidate(4) == [4,6,8,10], \"Test 4\"\n    assert candidate(5) == [5, 7, 9, 11, 13]\n    assert candidate(6) == [6, 8, 10, 12, 14, 16]\n    assert candidate(8) == [8, 10, 12, 14, 16, 18, 20, 22]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True, \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+      "entry_point": "make_a_pile",
+      "complete_code": "\ndef make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    return [n + 2*i for i in range(n)]\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 6,
+      "execution_timestamp": "2025-07-31T15:11:21.705377"
+    }
+  }
+}

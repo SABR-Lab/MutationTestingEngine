@@ -1,0 +1,151 @@
+{
+  "timestamp": "20250731_151141",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/122",
+    "timestamp": "20250731_151141",
+    "tester_version": "1.0",
+    "total_operators_tested": 5,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 6,
+    "killed_mutations": 4,
+    "mutation_score": 0.6666666666666666,
+    "survival_rate": 0.33333333333333337
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/122",
+    "original_passes": true,
+    "total_mutations": 6,
+    "killed_mutations": 4,
+    "mutation_score": 0.6666666666666666,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 3))",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 3))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmputpsf7iy.py\", line 48, in <module>\n    check(add_elements)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmputpsf7iy.py\", line 36, in check\n    assert candidate([111,121,3,4000,5,6], 2) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.686914",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 1))",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 1))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpybjh1yuq.py\", line 48, in <module>\n    check(add_elements)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmpybjh1yuq.py\", line 35, in check\n    assert candidate([1,-2,-3,41,57,76,87,88,99], 3) == -4\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.724997",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "LtEq->GtEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) >= 2))",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) >= 2))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7h00gd_b.py\", line 48, in <module>\n    check(add_elements)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmp7h00gd_b.py\", line 35, in check\n    assert candidate([1,-2,-3,41,57,76,87,88,99], 3) == -4\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.774362",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpm_a4qjoa.py\", line 48, in <module>\n    check(add_elements)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmpm_a4qjoa.py\", line 35, in check\n    assert candidate([1,-2,-3,41,57,76,87,88,99], 3) == -4\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.814608",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"\"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"\"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:41.834584",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+            "mutated_code": "def add_elements(arr, k):\n    \"\"\"X\"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))",
+            "mutated_complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\ndef add_elements(arr, k):\n    \"\"\"X\"\"\"\n    return sum((elem for elem in arr[:k] if len(str(elem)) <= 2))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:41.853811",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n",
+      "canonical_solution": "    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1,-2,-3,41,57,76,87,88,99], 3) == -4\n    assert candidate([111,121,3,4000,5,6], 2) == 0\n    assert candidate([11,21,3,90,5,6,7,8,9], 4) == 125\n    assert candidate([111,21,3,4000,5,6,7,8,9], 4) == 24, \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([1], 1) == 1, \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+      "entry_point": "add_elements",
+      "complete_code": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    return sum(elem for elem in arr[:k] if len(str(elem)) <= 2)\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 5,
+      "execution_timestamp": "2025-07-31T15:11:41.854749"
+    }
+  }
+}

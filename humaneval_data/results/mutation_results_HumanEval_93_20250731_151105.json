@@ -1,0 +1,215 @@
+{
+  "timestamp": "20250731_151105",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/93",
+    "timestamp": "20250731_151105",
+    "tester_version": "1.0",
+    "total_operators_tested": 6,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 10,
+    "killed_mutations": 8,
+    "mutation_score": 0.8,
+    "survival_rate": 0.19999999999999996
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/93",
+    "original_passes": true,
+    "total_mutations": 10,
+    "killed_mutations": 8,
+    "mutation_score": 0.8,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 3)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 3)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp14f3t2s5.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp14f3t2s5.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.205252",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 1)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 1)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpq_s4b_jk.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpq_s4b_jk.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.239490",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Add->Sub": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) - 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) - 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpbpje3by5.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpbpje3by5.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.276464",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpw8ehnc7s.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpw8ehnc7s.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.315520",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:05.333074",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = ''\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = ''\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp11srebjw.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp11srebjw.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.372277",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->X": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"X\"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"X\"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:05.392126",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'X'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'X'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp0qg5lu_o.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp0qg5lu_o.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.430997",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return 'X'.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return 'X'.join([vowels_replace[i] if i in vowels else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp20khz5uy.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp20khz5uy.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.466452",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Ternary Condition": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if True else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if True else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3tkor5zg.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp3tkor5zg.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ~~~~~~~~~^^^^^^^^\n  File \"/tmp/tmp3tkor5zg.py\", line 33, in encode\n    return ''.join([vowels_replace[i] if True else i for i in message])\n                    ~~~~~~~~~~~~~~^^^\nKeyError: 't'\n",
+            "timestamp": "2025-07-31T15:11:05.506706",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+            "mutated_code": "def encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if False else i for i in message])",
+            "mutated_complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n\n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = 'aeiouAEIOU'\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if False else i for i in message])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpp90p70dz.py\", line 51, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpp90p70dz.py\", line 38, in check\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:05.547459",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n",
+      "canonical_solution": "    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('TEST') == 'tgst', \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('Mudasir') == 'mWDCSKR', \"This prints if this assert fails 2 (good for debugging!)\"\n    assert candidate('YES') == 'ygs', \"This prints if this assert fails 3 (good for debugging!)\"\n    \n    # Check some edge cases that are easy to work out by hand.\n    assert candidate('This is a message') == 'tHKS KS C MGSSCGG', \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert candidate(\"I DoNt KnOw WhAt tO WrItE\") == 'k dQnT kNqW wHcT Tq wRkTg', \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+      "entry_point": "encode",
+      "complete_code": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    message = message.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in message])\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 6,
+      "execution_timestamp": "2025-07-31T15:11:05.547921"
+    }
+  }
+}

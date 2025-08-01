@@ -1,0 +1,100 @@
+{
+  "timestamp": "20250731_150415",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/9",
+    "timestamp": "20250731_150415",
+    "tester_version": "1.0",
+    "total_operators_tested": 3,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "survival_rate": 0.6666666666666667
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/9",
+    "original_passes": true,
+    "total_mutations": 3,
+    "killed_mutations": 1,
+    "mutation_score": 0.3333333333333333,
+    "mutation_results": {
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n",
+            "mutated_code": "from typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return",
+            "mutated_complete_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\nfrom typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfs5df_ow.py\", line 46, in <module>\n    check(rolling_max)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpfs5df_ow.py\", line 37, in check\n    assert candidate([]) == []\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:15.070108",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n",
+            "mutated_code": "from typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\"\"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return result",
+            "mutated_complete_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\nfrom typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\"\"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return result",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:04:15.109740",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n",
+            "mutated_code": "from typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\"X\"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return result",
+            "mutated_complete_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\nfrom typing import List, Tuple\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\"X\"\"\"\n    running_max = None\n    result = []\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n        result.append(running_max)\n    return result",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:04:15.149469",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n",
+      "canonical_solution": "    running_max = None\n    result = []\n\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == []\n    assert candidate([1, 2, 3, 4]) == [1, 2, 3, 4]\n    assert candidate([4, 3, 2, 1]) == [4, 4, 4, 4]\n    assert candidate([3, 2, 3, 100, 3]) == [3, 3, 3, 100, 100]\n",
+      "entry_point": "rolling_max",
+      "complete_code": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    running_max = None\n    result = []\n\n    for n in numbers:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 3,
+      "execution_timestamp": "2025-07-31T15:04:15.151646"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "timestamp": "20250731_151059",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/84",
+    "timestamp": "20250731_151059",
+    "tester_version": "1.0",
+    "total_operators_tested": 4,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 5,
+    "killed_mutations": 3,
+    "mutation_score": 0.6,
+    "survival_rate": 0.4
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/84",
+    "original_passes": true,
+    "total_mutations": 5,
+    "killed_mutations": 3,
+    "mutation_score": 0.6,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n",
+            "mutated_code": "def solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum((int(i) for i in str(N))))[3:]",
+            "mutated_complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum((int(i) for i in str(N))))[3:]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpn76j43xo.py\", line 50, in <module>\n    check(solve)\n    ~~~~~^^^^^^^\n  File \"/tmp/tmpn76j43xo.py\", line 36, in check\n    assert candidate(1000) == \"1\", \"Error\"\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Error\n",
+            "timestamp": "2025-07-31T15:10:59.308527",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n",
+            "mutated_code": "def solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum((int(i) for i in str(N))))[1:]",
+            "mutated_complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum((int(i) for i in str(N))))[1:]",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3wz4td3q.py\", line 50, in <module>\n    check(solve)\n    ~~~~~^^^^^^^\n  File \"/tmp/tmp3wz4td3q.py\", line 36, in check\n    assert candidate(1000) == \"1\", \"Error\"\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Error\n",
+            "timestamp": "2025-07-31T15:10:59.340085",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n",
+            "mutated_code": "def solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpl0pirvhp.py\", line 50, in <module>\n    check(solve)\n    ~~~~~^^^^^^^\n  File \"/tmp/tmpl0pirvhp.py\", line 36, in check\n    assert candidate(1000) == \"1\", \"Error\"\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Error\n",
+            "timestamp": "2025-07-31T15:10:59.377318",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n",
+            "mutated_code": "def solve(N):\n    \"\"\"\"\"\"\n    return bin(sum((int(i) for i in str(N))))[2:]",
+            "mutated_complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\ndef solve(N):\n    \"\"\"\"\"\"\n    return bin(sum((int(i) for i in str(N))))[2:]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:59.395166",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n",
+            "mutated_code": "def solve(N):\n    \"\"\"X\"\"\"\n    return bin(sum((int(i) for i in str(N))))[2:]",
+            "mutated_complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\ndef solve(N):\n    \"\"\"X\"\"\"\n    return bin(sum((int(i) for i in str(N))))[2:]",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:10:59.412062",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n",
+      "canonical_solution": "    return bin(sum(int(i) for i in str(N)))[2:]\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert True, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate(1000) == \"1\", \"Error\"\n    assert candidate(150) == \"110\", \"Error\"\n    assert candidate(147) == \"1100\", \"Error\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True, \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert candidate(333) == \"1001\", \"Error\"\n    assert candidate(963) == \"10010\", \"Error\"\n\n",
+      "entry_point": "solve",
+      "complete_code": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n    return bin(sum(int(i) for i in str(N)))[2:]\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 4,
+      "execution_timestamp": "2025-07-31T15:10:59.412805"
+    }
+  }
+}

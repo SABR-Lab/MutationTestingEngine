@@ -1,0 +1,355 @@
+{
+  "timestamp": "20250731_151448",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/146",
+    "timestamp": "20250731_151448",
+    "tester_version": "1.0",
+    "total_operators_tested": 9,
+    "operators_with_errors": 1
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 17,
+    "mutation_score": 0.8095238095238095,
+    "survival_rate": 0.19047619047619047
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/146",
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 17,
+    "mutation_score": 0.8095238095238095,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 10,
+        "killed_mutations": 8,
+        "survival_rate": 0.2,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmph80wrdjn.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmph80wrdjn.py\", line 30, in check\n    assert candidate([5, -2, 1, -5]) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.165672",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = -1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = -1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphojo4dca.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmphojo4dca.py\", line 30, in check\n    assert candidate([5, -2, 1, -5]) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.201271",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 11:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 11:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:48.216984",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 9:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 9:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:48.236197",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (2, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (2, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphdstof3c.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmphdstof3c.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.274820",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (0, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (0, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptoqyvpff.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmptoqyvpff.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.309840",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 4, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 4, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpk1snbhch.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpk1snbhch.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.344923",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 2, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 2, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpyauuzrts.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpyauuzrts.py\", line 33, in check\n    assert candidate([43, -12, 93, 125, 121, 109]) == 4\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.380380",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 6, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 6, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpghh8o9ut.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpghh8o9ut.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.415266",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 4, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 4, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplrkljkeb.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmplrkljkeb.py\", line 34, in check\n    assert candidate([71, -2, -33, 75, 21, 19]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.452669",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 20,
+        "mutations_tested": 10
+      },
+      "AddEq->SubEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count -= 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count -= 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwpbxswz9.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwpbxswz9.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.489622",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Gt->Lt": {
+        "error": "division by zero"
+      },
+      "And->Or": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits or int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits or int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp92bajaf3.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp92bajaf3.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.581997",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpm9xzrrwg.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpm9xzrrwg.py\", line 32, in check\n    assert candidate([33, -2, -3, 45, 21, 109]) == 2\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.638992",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdbm381vn.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdbm381vn.py\", line 30, in check\n    assert candidate([5, -2, 1, -5]) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.679664",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 1\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpawxobmwz.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpawxobmwz.py\", line 30, in check\n    assert candidate([5, -2, 1, -5]) == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.716099",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[1]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[1]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp8x8wxh1k.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8x8wxh1k.py\", line 32, in check\n    assert candidate([33, -2, -3, 45, 21, 109]) == 2\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.764487",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (0, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (0, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpy59zj075.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpy59zj075.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.809723",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-0]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-0]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptq_5b3iy.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmptq_5b3iy.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.844943",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 0\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 0\n    return count",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpojduhd5v.py\", line 46, in <module>\n    check(specialFilter)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpojduhd5v.py\", line 31, in check\n    assert candidate([15, -73, 14, -15]) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:14:48.881101",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"\"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"\"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:48.898485",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+            "mutated_code": "def specialFilter(nums):\n    \"\"\"X\"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "mutated_complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\ndef specialFilter(nums):\n    \"\"\"X\"\"\"\n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n    return count",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:48.915002",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n",
+      "canonical_solution": "    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([5, -2, 1, -5]) == 0  \n    assert candidate([15, -73, 14, -15]) == 1\n    assert candidate([33, -2, -3, 45, 21, 109]) == 2\n    assert candidate([43, -12, 93, 125, 121, 109]) == 4\n    assert candidate([71, -2, -33, 75, 21, 19]) == 3\n\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([1]) == 0              \n    assert candidate([]) == 0                   \n\n",
+      "entry_point": "specialFilter",
+      "complete_code": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    \n    count = 0\n    for num in nums:\n        if num > 10:\n            odd_digits = (1, 3, 5, 7, 9)\n            number_as_string = str(num)\n            if int(number_as_string[0]) in odd_digits and int(number_as_string[-1]) in odd_digits:\n                count += 1\n        \n    return count \n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 9,
+      "execution_timestamp": "2025-07-31T15:14:48.916090"
+    }
+  }
+}

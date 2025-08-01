@@ -1,0 +1,319 @@
+{
+  "timestamp": "20250731_151141",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/121",
+    "timestamp": "20250731_151141",
+    "tester_version": "1.0",
+    "total_operators_tested": 9,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 18,
+    "killed_mutations": 16,
+    "mutation_score": 0.8888888888888888,
+    "survival_rate": 0.11111111111111116
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/121",
+    "original_passes": true,
+    "total_mutations": 18,
+    "killed_mutations": 16,
+    "mutation_score": 0.8888888888888888,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 8,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 3 == 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 3 == 0 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpsb2ybcz5.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpsb2ybcz5.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.896947",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 1 == 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 1 == 0 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpewpgtml6.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpewpgtml6.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.933034",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 1 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 1 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfkgshwg5.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpfkgshwg5.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:40.969473",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == -1 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == -1 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqeyzwhu3.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpqeyzwhu3.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.008713",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 3 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 3 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpccmlvi__.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpccmlvi__.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.052579",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 1 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 1 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwn7zewnc.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpwn7zewnc.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.096268",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 2])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 2])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkvflqgic.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpkvflqgic.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.140589",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 0])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 0])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplvk3p1js.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmplvk3p1js.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.182677",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 8,
+        "mutations_tested": 8
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx // 2 == 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx // 2 == 0 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmph_s6467t.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmph_s6467t.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.222886",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x // 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x // 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpllz4mh20.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpllz4mh20.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.258648",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Eq->NotEq": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 != 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 != 0 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpy2ff2pno.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpy2ff2pno.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.291969",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 != 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 != 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpcuq85a0e.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpcuq85a0e.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.325932",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "And->Or": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 or x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 or x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6z3smkjy.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmp6z3smkjy.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.360526",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxdw61f94.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpxdw61f94.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.395654",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 1 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 1 and x % 2 == 1])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqd1bcf9b.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpqd1bcf9b.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.433172",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 0])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 0])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpr0_t7r5b.py\", line 40, in <module>\n    check(solution)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpr0_t7r5b.py\", line 25, in check\n    assert candidate([5, 8, 7, 1])    == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:41.472873",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"\"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"\"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 1])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:41.492456",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+            "mutated_code": "def solution(lst):\n    \"\"\"X\"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 1])",
+            "mutated_complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\ndef solution(lst):\n    \"\"\"X\"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx % 2 == 0 and x % 2 == 1])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:41.511733",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n",
+      "canonical_solution": "    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([5, 8, 7, 1])    == 12\n    assert candidate([3, 3, 3, 3, 3]) == 9\n    assert candidate([30, 13, 24, 321]) == 0\n    assert candidate([5, 9]) == 5\n    assert candidate([2, 4, 8]) == 0\n    assert candidate([30, 13, 23, 32]) == 23\n    assert candidate([3, 13, 2, 9]) == 3\n\n    # Check some edge cases that are easy to work out by hand.\n\n",
+      "entry_point": "solution",
+      "complete_code": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n    return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 9,
+      "execution_timestamp": "2025-07-31T15:11:41.512836"
+    }
+  }
+}

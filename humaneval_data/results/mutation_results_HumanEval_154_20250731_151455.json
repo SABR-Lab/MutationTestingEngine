@@ -1,0 +1,414 @@
+{
+  "timestamp": "20250731_151455",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/154",
+    "timestamp": "20250731_151455",
+    "tester_version": "1.0",
+    "total_operators_tested": 11,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 24,
+    "killed_mutations": 14,
+    "mutation_score": 0.5833333333333334,
+    "survival_rate": 0.41666666666666663
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/154",
+    "original_passes": true,
+    "total_mutations": 24,
+    "killed_mutations": 14,
+    "mutation_score": 0.5833333333333334,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 4,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 2):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 2):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.077172",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 0):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 0):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.097178",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 2):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 2):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.116935",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 0):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 0):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.138320",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 2\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 2\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqidlgrnw.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqidlgrnw.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.174320",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 0\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 0\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppwkz7mae.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppwkz7mae.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.211659",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return 1",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return 1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2lmzyfox.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2lmzyfox.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.247179",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return -1",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return -1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptvtaz9o9.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptvtaz9o9.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.281958",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 8,
+        "mutations_tested": 8
+      },
+      "Add->Sub": {
+        "total_mutations": 4,
+        "killed_mutations": 3,
+        "survival_rate": 0.25,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b - b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b - b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkhe_un5y.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkhe_un5y.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/tmp/tmpkhe_un5y.py\", line 23, in cycpattern_check\n    pat = b - b\n          ~~^~~\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n",
+            "timestamp": "2025-07-31T15:14:55.316357",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l - 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l - 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp228ag5qc.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp228ag5qc.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.353022",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l - 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l - 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7uiupzpq.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7uiupzpq.py\", line 40, in check\n    assert  candidate(\"efef\",\"fee\") == True , \"test #3\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #3\n",
+            "timestamp": "2025-07-31T15:14:55.387547",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i - l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i - l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu6lhahow.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu6lhahow.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.424729",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j - l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j - l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.441208",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 5,
+        "mutations_tested": 5
+      },
+      "Sub->Add": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) + l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) + l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.462584",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] != pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] != pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwluevxc5.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwluevxc5.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.518661",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb6c36h9m.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpb6c36h9m.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.574645",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpci86jpu8.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpci86jpu8.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.631189",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "True->False": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return False\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return False\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpoiu21syl.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpoiu21syl.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.670010",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "False->True": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return True",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return True",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2fn5uc9_.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2fn5uc9_.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.710263",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return 1",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return 1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdlkw7aqp.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdlkw7aqp.py\", line 37, in check\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #0\n",
+            "timestamp": "2025-07-31T15:14:55.746948",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 3,
+        "killed_mutations": 1,
+        "survival_rate": 0.6666666666666666,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 0):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 0):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.763519",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 0):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 0):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.783711",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 0\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return 0\n    return False",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwfusu_24.py\", line 49, in <module>\n    check(cycpattern_check)\n    ~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwfusu_24.py\", line 38, in check\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: test #1\n",
+            "timestamp": "2025-07-31T15:14:55.823149",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"\"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"\"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.840505",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+            "mutated_code": "def cycpattern_check(a, b):\n    \"\"\"X\"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "mutated_complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\ndef cycpattern_check(a, b):\n    \"\"\"X\"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i + l] == pat[j:j + l]:\n                return True\n    return False",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:55.857001",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n",
+      "canonical_solution": "    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    #assert True, \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    #assert True, \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert  candidate(\"xyzw\",\"xyw\") == False , \"test #0\"\n    assert  candidate(\"yello\",\"ell\") == True , \"test #1\"\n    assert  candidate(\"whattup\",\"ptut\") == False , \"test #2\"\n    assert  candidate(\"efef\",\"fee\") == True , \"test #3\"\n    assert  candidate(\"abab\",\"aabb\") == False , \"test #4\"\n    assert  candidate(\"winemtt\",\"tinem\") == True , \"test #5\"\n\n",
+      "entry_point": "cycpattern_check",
+      "complete_code": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    l = len(b)\n    pat = b + b\n    for i in range(len(a) - l + 1):\n        for j in range(l + 1):\n            if a[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 11,
+      "execution_timestamp": "2025-07-31T15:14:55.858111"
+    }
+  }
+}

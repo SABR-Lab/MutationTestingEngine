@@ -1,0 +1,8 @@
+# Requirements for the HumanEval tester
+# Most functionality uses only Python standard library
+
+# Optional: for better AST to code conversion
+astor>=0.8.0
+
+# Optional: for more advanced HTTP requests (urllib.request is used by default)
+requests>=2.25.0

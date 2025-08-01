@@ -1,0 +1,229 @@
+{
+  "timestamp": "20250731_150412",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/5",
+    "timestamp": "20250731_150412",
+    "tester_version": "1.0",
+    "total_operators_tested": 6,
+    "operators_with_errors": 1
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 12,
+    "killed_mutations": 10,
+    "mutation_score": 0.8333333333333334,
+    "survival_rate": 0.16666666666666663
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/5",
+    "original_passes": true,
+    "total_mutations": 12,
+    "killed_mutations": 10,
+    "mutation_score": 0.8333333333333334,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 4,
+        "killed_mutations": 4,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-2]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-2]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb1c2gz_e.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpb1c2gz_e.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:11.982190",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-0]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-0]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzdc9j2ri.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpzdc9j2ri.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.035487",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-2])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-2])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp5k_q17fy.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmp5k_q17fy.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.099668",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-0])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-0])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpelwzhk_s.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpelwzhk_s.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.157172",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      },
+      "Remove Not": {
+        "error": "division by zero"
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6rfx14js.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmp6rfx14js.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.276452",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpjg5ezalx.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpjg5ezalx.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.329030",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpskbrj0ka.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpskbrj0ka.py\", line 38, in check\n    assert candidate([], 7) == []\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.383579",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9_wcmvqg.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmp9_wcmvqg.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.436705",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-0]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-0]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfnkuhrua.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmpfnkuhrua.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.493721",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-0])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-0])\n    return result",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppssgqq71.py\", line 46, in <module>\n    check(intersperse)\n    ~~~~~^^^^^^^^^^^^^\n  File \"/tmp/tmppssgqq71.py\", line 39, in check\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:04:12.546249",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\"\"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\"\"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:04:12.585684",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+            "mutated_code": "from typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\"X\"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "mutated_complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\nfrom typing import List\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\"X\"\"\"\n    if not numbers:\n        return []\n    result = []\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n    result.append(numbers[-1])\n    return result",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:04:12.622617",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n",
+      "canonical_solution": "    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([], 7) == []\n    assert candidate([5, 6, 3, 2], 8) == [5, 8, 6, 8, 3, 8, 2]\n    assert candidate([2, 2, 2], 2) == [2, 2, 2, 2, 2]\n",
+      "entry_point": "intersperse",
+      "complete_code": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n    if not numbers:\n        return []\n\n    result = []\n\n    for n in numbers[:-1]:\n        result.append(n)\n        result.append(delimeter)\n\n    result.append(numbers[-1])\n\n    return result\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 6,
+      "execution_timestamp": "2025-07-31T15:04:12.623985"
+    }
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "timestamp": "20250731_150933",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/47",
+    "timestamp": "20250731_150933",
+    "tester_version": "1.0",
+    "total_operators_tested": 11,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 23,
+    "killed_mutations": 21,
+    "mutation_score": 0.9130434782608695,
+    "survival_rate": 0.08695652173913049
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/47",
+    "original_passes": true,
+    "total_mutations": 23,
+    "killed_mutations": 21,
+    "mutation_score": 0.9130434782608695,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 9,
+        "killed_mutations": 9,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 3 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 3 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7r3yc16m.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp7r3yc16m.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.241434",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 1 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 1 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp5casw1iy.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp5casw1iy.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.283556",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 2:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 2:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpx5ea6h88.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpx5ea6h88.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.321702",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 0:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 0:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpj31pqsv1.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpj31pqsv1.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.366328",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 3]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 3]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpv2xxt_wh.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpv2xxt_wh.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.414782",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 1]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 1]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpe23izi9j.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpe23izi9j.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpe23izi9j.py\", line 19, in median\n    return l[len(l) // 1]\n           ~^^^^^^^^^^^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-07-31T15:09:32.455917",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 3 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 3 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7597alzf.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp7597alzf.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.505545",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 1 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 1 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2yre4och.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp2yre4och.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.546391",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 2] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 2] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpq7epvjy4.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpq7epvjy4.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.584865",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 0] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 0] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgt8981pb.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpgt8981pb.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.621968",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 14,
+        "mutations_tested": 10
+      },
+      "Add->Sub": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] - l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] - l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpg674ykf7.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpg674ykf7.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.659408",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Sub->Add": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 + 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 + 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpc_9jlbas.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpc_9jlbas.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.702309",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Div->Mult": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) * 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) * 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpww6oa85q.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpww6oa85q.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.746083",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "FloorDiv->Mod": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) % 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) % 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpoeka7y6t.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpoeka7y6t.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.786847",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) % 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) % 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzb_71lrw.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpzb_71lrw.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.827335",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) % 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) % 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpz8pldyw7.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpz8pldyw7.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.869462",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) // 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) // 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxprqyddr.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpxprqyddr.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.908529",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 != 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 != 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqb_tk5rc.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpqb_tk5rc.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.951912",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpofzr948f.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpofzr948f.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:32.988890",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpjvh5pg29.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpjvh5pg29.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:33.027329",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 0:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 0:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkdck8ak5.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpkdck8ak5.py\", line 29, in check\n    assert candidate([3, 1, 2, 4, 5]) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:33.064700",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 0] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 0] + l[len(l) // 2]) / 2.0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwit_4iyi.py\", line 40, in <module>\n    check(median)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpwit_4iyi.py\", line 30, in check\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:33.099737",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"\"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"\"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:33.120252",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+            "mutated_code": "def median(l: list):\n    \"\"\"X\"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "mutated_complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\ndef median(l: list):\n    \"\"\"X\"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:33.148483",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n",
+      "canonical_solution": "    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+      "test_code": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([3, 1, 2, 4, 5]) == 3\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n    assert candidate([5]) == 5\n    assert candidate([6, 5]) == 5.5\n    assert candidate([8, 1, 3, 9, 9, 2, 7]) == 7 \n\n",
+      "entry_point": "median",
+      "complete_code": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 11,
+      "execution_timestamp": "2025-07-31T15:09:33.149565"
+    }
+  }
+}

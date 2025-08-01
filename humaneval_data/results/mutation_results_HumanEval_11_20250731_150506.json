@@ -1,0 +1,197 @@
+{
+  "timestamp": "20250731_150506",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/11",
+    "timestamp": "20250731_150506",
+    "tester_version": "1.0",
+    "total_operators_tested": 4,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "survival_rate": 0.2222222222222222
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/11",
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "mutation_results": {
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i != j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i != j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpypli_vu6.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmpypli_vu6.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.501031",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpj9_7bkb9.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmpj9_7bkb9.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpj9_7bkb9.py\", line 24, in string_xor\n    return ''.join((xor(x, y) for x, y in zip(a, b)))\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: sequence item 0: expected str instance, NoneType found\n",
+            "timestamp": "2025-07-31T15:05:06.540342",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfmnjj55i.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmpfmnjj55i.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfmnjj55i.py\", line 24, in string_xor\n    return ''.join((xor(x, y) for x, y in zip(a, b)))\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: sequence item 1: expected str instance, NoneType found\n",
+            "timestamp": "2025-07-31T15:05:06.580399",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpnfmwy4ed.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmpnfmwy4ed.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.618100",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\"\"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\"\"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:06.646018",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return ''\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return ''\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps823mmfm.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmps823mmfm.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.687783",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return ''\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return ''\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_3pu8at2.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmp_3pu8at2.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.731655",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->X": {
+        "total_mutations": 4,
+        "killed_mutations": 3,
+        "survival_rate": 0.25,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\"X\"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\"X\"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:05:06.765479",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return 'X'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return 'X'\n        else:\n            return '1'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp33iqg6em.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmp33iqg6em.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.809750",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return 'X'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return 'X'\n    return ''.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp13m6rkfx.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmp13m6rkfx.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.857599",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+            "mutated_code": "from typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return 'X'.join((xor(x, y) for x, y in zip(a, b)))",
+            "mutated_complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\nfrom typing import List\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n    return 'X'.join((xor(x, y) for x, y in zip(a, b)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2t8nprtm.py\", line 43, in <module>\n    check(string_xor)\n    ~~~~~^^^^^^^^^^^^\n  File \"/tmp/tmp2t8nprtm.py\", line 35, in check\n    assert candidate('111000', '101010') == '010010'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:05:06.903780",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      }
+    },
+    "problem_info": {
+      "prompt": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n",
+      "canonical_solution": "    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n",
+      "test_code": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('111000', '101010') == '010010'\n    assert candidate('1', '1') == '0'\n    assert candidate('0101', '0000') == '0101'\n",
+      "entry_point": "string_xor",
+      "complete_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(a, b))\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 4,
+      "execution_timestamp": "2025-07-31T15:05:06.905091"
+    }
+  }
+}

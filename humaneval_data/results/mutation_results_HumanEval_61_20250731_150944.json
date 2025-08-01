@@ -1,0 +1,447 @@
+{
+  "timestamp": "20250731_150944",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/61",
+    "timestamp": "20250731_150944",
+    "tester_version": "1.0",
+    "total_operators_tested": 11,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 28,
+    "killed_mutations": 25,
+    "mutation_score": 0.8928571428571429,
+    "survival_rate": 0.1071428571428571
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/61",
+    "original_passes": true,
+    "total_mutations": 28,
+    "killed_mutations": 25,
+    "mutation_score": 0.8928571428571429,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 10,
+        "killed_mutations": 10,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpi6lxclab.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpi6lxclab.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:43.793707",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = -1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = -1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqdtd2514.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqdtd2514.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:43.837276",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 2\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 2\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpaxhhe0f1.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpaxhhe0f1.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:43.876905",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 0\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 0\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpov0cc__7.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpov0cc__7.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:43.920586",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 2\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 2\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpp4giyyb5.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp4giyyb5.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:43.961225",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 0\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 0\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp51rckg4s.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp51rckg4s.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.001037",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 1:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 1:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpujj7thnu.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpujj7thnu.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.039231",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < -1:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < -1:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgcqg52wh.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpgcqg52wh.py\", line 50, in check\n    assert not candidate(\")(()\")\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.077309",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return 1\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return 1\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpuxg8yz_9.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuxg8yz_9.py\", line 49, in check\n    assert not candidate(\"((()())))\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.117248",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return -1\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return -1\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpiq9b0exk.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpiq9b0exk.py\", line 49, in check\n    assert not candidate(\"((()())))\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.170562",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 12,
+        "mutations_tested": 10
+      },
+      "AddEq->SubEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth -= 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth -= 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfimf9iny.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfimf9iny.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.217700",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "SubEq->AddEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth += 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth += 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxz36wdr5.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpxz36wdr5.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.266201",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b != '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b != '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdixi8onf.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdixi8onf.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.314336",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth != 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth != 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpa22ng0nz.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpa22ng0nz.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.358722",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Lt->Gt": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth > 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth > 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpy7lk3ijq.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpy7lk3ijq.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.401229",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return\n    return depth == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:44.425962",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpck9kxhnq.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpck9kxhnq.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.465910",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "False->True": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return True\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return True\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdw8ay1fy.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdw8ay1fy.py\", line 49, in check\n    assert not candidate(\"((()())))\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.509998",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 4,
+        "killed_mutations": 4,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 1\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps12g0n76.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmps12g0n76.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.550814",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 1:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 1:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_d8bdwjy.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_d8bdwjy.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.592705",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return 1\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return 1\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_c6uk3bi.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_c6uk3bi.py\", line 49, in check\n    assert not candidate(\"((()())))\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.637577",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 1",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp5pcn95by.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp5pcn95by.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.673441",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 0\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 0\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3lljwg3a.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3lljwg3a.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.710628",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 0\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 0\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp0x6pc1h8.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp0x6pc1h8.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.747624",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\"\"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\"\"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:44.765042",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpy7pd7ll8.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpy7pd7ll8.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.805470",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->X": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\"X\"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\"X\"\"\"\n    depth = 0\n    for b in brackets:\n        if b == '(':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:09:44.823262",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+            "mutated_code": "def correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == 'X':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "mutated_complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == 'X':\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6rm6gtu_.py\", line 63, in <module>\n    check(correct_bracketing)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6rm6gtu_.py\", line 45, in check\n    assert candidate(\"()\")\n           ~~~~~~~~~^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:09:44.861804",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n",
+      "canonical_solution": "    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+      "test_code": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(\"()\")\n    assert candidate(\"(()())\")\n    assert candidate(\"()()(()())()\")\n    assert candidate(\"()()((()()())())(()()(()))\")\n    assert not candidate(\"((()())))\")\n    assert not candidate(\")(()\")\n    assert not candidate(\"(\")\n    assert not candidate(\"((((\")\n    assert not candidate(\")\")\n    assert not candidate(\"(()\")\n    assert not candidate(\"()()(()())())(()\")\n    assert not candidate(\"()()(()())()))()\")\n\n",
+      "entry_point": "correct_bracketing",
+      "complete_code": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 11,
+      "execution_timestamp": "2025-07-31T15:09:44.862735"
+    }
+  }
+}

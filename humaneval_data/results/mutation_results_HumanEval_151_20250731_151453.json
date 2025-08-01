@@ -1,0 +1,350 @@
+{
+  "timestamp": "20250731_151453",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/151",
+    "timestamp": "20250731_151453",
+    "tester_version": "1.0",
+    "total_operators_tested": 10,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 20,
+    "killed_mutations": 17,
+    "mutation_score": 0.85,
+    "survival_rate": 0.15000000000000002
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/151",
+    "original_passes": true,
+    "total_mutations": 20,
+    "killed_mutations": 17,
+    "mutation_score": 0.85,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 7,
+        "survival_rate": 0.125,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 3 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 3 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzfwwj03x.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpzfwwj03x.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.086017",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 1 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 1 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpd1e3o8ko.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpd1e3o8ko.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.124649",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 1 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 1 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp1enqe2l1.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp1enqe2l1.py\", line 42, in check\n    assert candidate(lst) == odd_sum , \"This prints if this assert fails 7 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 7 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.171381",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > -1 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > -1 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:53.191213",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 3 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 3 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpibl57rpd.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpibl57rpd.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.226555",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 1 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 1 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9qg20953.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp9qg20953.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.261646",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 1 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 1 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpmvcaks7j.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpmvcaks7j.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.297979",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != -1 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != -1 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6c2c4ufq.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6c2c4ufq.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.334670",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 8,
+        "mutations_tested": 8
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i // 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i // 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppfn2q476.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppfn2q476.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.371150",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Pow->Mult": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i * 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i * 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp0lhltc_w.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp0lhltc_w.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.406370",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "NotEq->Eq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 == 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 == 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgqne0u0e.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpgqne0u0e.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.444258",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Gt->Lt": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i < 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i < 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvj8bawda.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvj8bawda.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.480773",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "And->Or": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 or i % 2 != 0 or '.' not in str(i)])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 or i % 2 != 0 or '.' not in str(i)])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpltr07ga1.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpltr07ga1.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.517643",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpb645ngqx.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpb645ngqx.py\", line 31, in check\n    assert candidate([]) == 0 , \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.555210",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 1 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 1 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmph18sv2v4.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmph18sv2v4.py\", line 42, in check\n    assert candidate(lst) == odd_sum , \"This prints if this assert fails 7 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 7 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.594128",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 1 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 1 and ('.' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps470c1a5.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmps470c1a5.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.635792",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:53.653947",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp09re9fdn.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp09re9fdn.py\", line 32, in check\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 2 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.693452",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->X": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"X\"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"X\"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('.' not in str(i))])",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:14:53.710147",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+            "mutated_code": "def double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('X' not in str(i))])",
+            "mutated_complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\ndef double_the_difference(lst):\n    \"\"\"\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n\n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n\n    If the input list is empty, return 0.\n    \"\"\"\n    return sum([i ** 2 for i in lst if i > 0 and i % 2 != 0 and ('X' not in str(i))])",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptanyaka2.py\", line 49, in <module>\n    check(double_the_difference)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptanyaka2.py\", line 33, in check\n    assert candidate([0.1, 0.2, 0.3]) == 0 , \"This prints if this assert fails 3 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 3 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:14:53.747475",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n",
+      "canonical_solution": "    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([]) == 0 , \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate([5, 4]) == 25 , \"This prints if this assert fails 2 (good for debugging!)\"\n    assert candidate([0.1, 0.2, 0.3]) == 0 , \"This prints if this assert fails 3 (good for debugging!)\"\n    assert candidate([-10, -20, -30]) == 0 , \"This prints if this assert fails 4 (good for debugging!)\"\n\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([-1, -2, 8]) == 0, \"This prints if this assert fails 5 (also good for debugging!)\"\n    assert candidate([0.2, 3, 5]) == 34, \"This prints if this assert fails 6 (also good for debugging!)\"\n    lst = list(range(-99, 100, 2))\n    odd_sum = sum([i**2 for i in lst if i%2!=0 and i > 0])\n    assert candidate(lst) == odd_sum , \"This prints if this assert fails 7 (good for debugging!)\"\n\n",
+      "entry_point": "double_the_difference",
+      "complete_code": "\ndef double_the_difference(lst):\n    '''\n    Given a list of numbers, return the sum of squares of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    double_the_difference([-1, -2, 0]) == 0\n    double_the_difference([9, -2]) == 81\n    double_the_difference([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n    return sum([i**2 for i in lst if i > 0 and i%2!=0 and \".\" not in str(i)])\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 10,
+      "execution_timestamp": "2025-07-31T15:14:53.748386"
+    }
+  }
+}

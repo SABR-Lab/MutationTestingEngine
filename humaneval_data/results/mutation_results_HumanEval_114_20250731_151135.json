@@ -1,0 +1,385 @@
+{
+  "timestamp": "20250731_151135",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/114",
+    "timestamp": "20250731_151135",
+    "tester_version": "1.0",
+    "total_operators_tested": 9,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 24,
+    "killed_mutations": 18,
+    "mutation_score": 0.75,
+    "survival_rate": 0.25
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/114",
+    "original_passes": true,
+    "total_mutations": 24,
+    "killed_mutations": 18,
+    "mutation_score": 0.75,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 10,
+        "killed_mutations": 7,
+        "survival_rate": 0.3,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpztaq_fgq.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpztaq_fgq.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.452328",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = -1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = -1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:34.469503",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6uvhwm_u.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6uvhwm_u.py\", line 34, in check\n    assert candidate([-1, -2, -3]) == -6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:34.507488",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = -1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = -1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2lpdo7ch.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2lpdo7ch.py\", line 34, in check\n    assert candidate([-1, -2, -3]) == -6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:34.545185",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:34.561631",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < -1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < -1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:34.578684",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppori26y0.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppori26y0.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.616465",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = -1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = -1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpj0p5x5kl.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpj0p5x5kl.py\", line 39, in check\n    assert candidate([100, -1, -2, -3, 10, -5]) == -6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:34.655918",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpovg9eu3w.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpovg9eu3w.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.691474",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == -1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == -1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdlfj38_x.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdlfj38_x.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.727417",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 10,
+        "mutations_tested": 10
+      },
+      "AddEq->SubEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s -= -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s -= -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps95u9ytb.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmps95u9ytb.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.762355",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum != 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum != 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu0x8556y.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu0x8556y.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.793472",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Lt->Gt": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s > 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s > 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4as19dmv.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4as19dmv.py\", line 34, in check\n    assert candidate([-1, -2, -3]) == -6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:34.825530",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpr873w56g.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpr873w56g.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.858245",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp791bfhg7.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp791bfhg7.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.891325",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4g833h9v.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4g833h9v.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.927927",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpe9r13xco.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpe9r13xco.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:34.976390",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 5,
+        "killed_mutations": 4,
+        "survival_rate": 0.2,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 1\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpm6dmlbjz.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpm6dmlbjz.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:35.026886",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 1\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpjbyn9515.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpjbyn9515.py\", line 34, in check\n    assert candidate([-1, -2, -3]) == -6\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:35.065335",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 1:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:35.080827",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 1\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplum2wpzc.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmplum2wpzc.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:35.118198",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 1:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6m8sgwj4.py\", line 52, in <module>\n    check(minSubArraySum)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6m8sgwj4.py\", line 33, in check\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+            "timestamp": "2025-07-31T15:11:35.158830",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 5,
+        "mutations_tested": 5
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"\"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"\"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:35.175468",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+            "mutated_code": "def minSubArraySum(nums):\n    \"\"\"X\"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "mutated_complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\ndef minSubArraySum(nums):\n    \"\"\"X\"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if s < 0:\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max((-i for i in nums))\n    min_sum = -max_sum\n    return min_sum",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:35.191084",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n",
+      "canonical_solution": "    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([2, 3, 4, 1, 2, 4]) == 1, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate([-1, -2, -3]) == -6\n    assert candidate([-1, -2, -3, 2, -10]) == -14\n    assert candidate([-9999999999999999]) == -9999999999999999\n    assert candidate([0, 10, 20, 1000000]) == 0\n    assert candidate([-1, -2, -3, 10, -5]) == -6\n    assert candidate([100, -1, -2, -3, 10, -5]) == -6\n    assert candidate([10, 11, 13, 8, 3, 4]) == 3\n    assert candidate([100, -33, 32, -1, 0, -2]) == -33\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([-10]) == -10, \"This prints if this assert fails 2 (also good for debugging!)\"\n    assert candidate([7]) == 7\n    assert candidate([1, -1]) == -1\n",
+      "entry_point": "minSubArraySum",
+      "complete_code": "\ndef minSubArraySum(nums):\n    \"\"\"\n    Given an array of integers nums, find the minimum sum of any non-empty sub-array\n    of nums.\n    Example\n    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1\n    minSubArraySum([-1, -2, -3]) == -6\n    \"\"\"\n    max_sum = 0\n    s = 0\n    for num in nums:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in nums)\n    min_sum = -max_sum\n    return min_sum\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 9,
+      "execution_timestamp": "2025-07-31T15:11:35.192067"
+    }
+  }
+}

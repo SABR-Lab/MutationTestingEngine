@@ -1,0 +1,213 @@
+{
+  "timestamp": "20250731_151124",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/104",
+    "timestamp": "20250731_151124",
+    "tester_version": "1.0",
+    "total_operators_tested": 7,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 10,
+    "killed_mutations": 8,
+    "mutation_score": 0.8,
+    "survival_rate": 0.19999999999999996
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/104",
+    "original_passes": true,
+    "total_mutations": 10,
+    "killed_mutations": 8,
+    "mutation_score": 0.8,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 4,
+        "killed_mutations": 4,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 3 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 3 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplhvu2yjy.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmplhvu2yjy.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.433911",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 1 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 1 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7n2ktqwh.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7n2ktqwh.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.472885",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 2 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 2 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4mhnwq92.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4mhnwq92.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.512351",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 0 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 0 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp758krpmd.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp758krpmd.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.550331",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) // 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) // 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpojjt04ig.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpojjt04ig.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.592377",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 != 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 != 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpps3dh8yk.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmpps3dh8yk.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.630137",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphvjs7227.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmphvjs7227.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.666629",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 0 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n\n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 0 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp557m31ha.py\", line 48, in <module>\n    check(unique_digits)\n    ~~~~~^^^^^^^^^^^^^^^\n  File \"/tmp/tmp557m31ha.py\", line 35, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-07-31T15:11:24.702352",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"\"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"\"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:24.719186",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+            "mutated_code": "def unique_digits(x):\n    \"\"\"X\"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "mutated_complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\ndef unique_digits(x):\n    \"\"\"X\"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all((int(c) % 2 == 1 for c in str(i))):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:24.735963",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n",
+      "canonical_solution": "    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n    assert candidate([152, 323, 1422, 10]) == []\n    assert candidate([12345, 2033, 111, 151]) == [111, 151]\n    assert candidate([135, 103, 31]) == [31, 135]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n",
+      "entry_point": "unique_digits",
+      "complete_code": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 7,
+      "execution_timestamp": "2025-07-31T15:11:24.736800"
+    }
+  }
+}

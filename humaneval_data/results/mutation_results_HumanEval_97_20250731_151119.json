@@ -1,0 +1,224 @@
+{
+  "timestamp": "20250731_151119",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/97",
+    "timestamp": "20250731_151119",
+    "tester_version": "1.0",
+    "total_operators_tested": 7,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 11,
+    "killed_mutations": 9,
+    "mutation_score": 0.8181818181818182,
+    "survival_rate": 0.18181818181818177
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/97",
+    "original_passes": true,
+    "total_mutations": 11,
+    "killed_mutations": 9,
+    "mutation_score": 0.8181818181818182,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 4,
+        "killed_mutations": 4,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 11) * abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 11) * abs(b % 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpq_ezpupg.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpq_ezpupg.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 10\n",
+            "timestamp": "2025-07-31T15:11:19.337596",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 9) * abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 9) * abs(b % 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptqq2egle.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmptqq2egle.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 8\n",
+            "timestamp": "2025-07-31T15:11:19.369859",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 11)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 11)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_lcawx97.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmp_lcawx97.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 40\n",
+            "timestamp": "2025-07-31T15:11:19.403887",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 9)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 9)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpm6l80b27.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpm6l80b27.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 56\n",
+            "timestamp": "2025-07-31T15:11:19.441663",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      },
+      "Mult->Div": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) / abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) / abs(b % 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpxvl2cphq.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpxvl2cphq.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 4.0\n",
+            "timestamp": "2025-07-31T15:11:19.476998",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a // 10) * abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a // 10) * abs(b % 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpa5acl16z.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpa5acl16z.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 28\n",
+            "timestamp": "2025-07-31T15:11:19.509217",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b // 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b // 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpub9dpfea.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmpub9dpfea.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 328\n",
+            "timestamp": "2025-07-31T15:11:19.542503",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Mult->Pow": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) ** abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) ** abs(b % 10)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp744nbi5i.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmp744nbi5i.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: 64\n",
+            "timestamp": "2025-07-31T15:11:19.576953",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps8e9npln.py\", line 44, in <module>\n    check(multiply)\n    ~~~~~^^^^^^^^^^\n  File \"/tmp/tmps8e9npln.py\", line 27, in check\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: First test error: None\n",
+            "timestamp": "2025-07-31T15:11:19.617712",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"\"\"\"\n    return abs(a % 10) * abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"\"\"\"\n    return abs(a % 10) * abs(b % 10)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:19.635704",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n",
+            "mutated_code": "def multiply(a, b):\n    \"\"\"X\"\"\"\n    return abs(a % 10) * abs(b % 10)",
+            "mutated_complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\ndef multiply(a, b):\n    \"\"\"X\"\"\"\n    return abs(a % 10) * abs(b % 10)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-07-31T15:11:19.655467",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n",
+      "canonical_solution": "    return abs(a % 10) * abs(b % 10)\n",
+      "test_code": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(148, 412) == 16, \"First test error: \" + str(candidate(148, 412))                    \n    assert candidate(19, 28) == 72, \"Second test error: \" + str(candidate(19, 28))           \n    assert candidate(2020, 1851) == 0, \"Third test error: \" + str(candidate(2020, 1851))\n    assert candidate(14,-15) == 20, \"Fourth test error: \" + str(candidate(14,-15))      \n    assert candidate(76, 67) == 42, \"Fifth test error: \" + str(candidate(76, 67))      \n    assert candidate(17, 27) == 49, \"Sixth test error: \" + str(candidate(17, 27))      \n\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(0, 1) == 0, \"1st edge test error: \" + str(candidate(0, 1))\n    assert candidate(0, 0) == 0, \"2nd edge test error: \" + str(candidate(0, 0))\n\n",
+      "entry_point": "multiply",
+      "complete_code": "\ndef multiply(a, b):\n    \"\"\"Complete the function that takes two integers and returns \n    the product of their unit digits.\n    Assume the input is always valid.\n    Examples:\n    multiply(148, 412) should return 16.\n    multiply(19, 28) should return 72.\n    multiply(2020, 1851) should return 0.\n    multiply(14,-15) should return 20.\n    \"\"\"\n    return abs(a % 10) * abs(b % 10)\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 7,
+      "execution_timestamp": "2025-07-31T15:11:19.656117"
+    }
+  }
+}
