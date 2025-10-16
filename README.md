@@ -137,6 +137,21 @@ python humaneval_tester.py --test-all
 - **ReplaceEqWithNotEq**: Changes == to !=
 - **ReplaceLtWithGt**: Changes < to >
 
+### Control Flow Mutations
+- **ReplaceBreakWithContinue**: Changes break to continue
+- **ReplaceContinueWithBreak**: Changes continue to break
+- **RemoveReturnValue**: Remove return
+
+### Exception Mutations
+- **ReplaceRaiseWithPass**: Changes Raise With Pass
+
+### Logical Mutations
+- **ReplaceAndWithOr**: Changes `x and y` to `x or y`
+- **ReplaceOrWithAnd**: Changes `x or y` to `x and y`
+- **RemoveNotOperator**: Changes not x to x
+- **RemoveUnaryMinus**: Changes +5 to -5 
+- **RemoveUnaryPlus**: Changes +5 to 5
+
 ## API Reference
 
 ### MutationEngine
