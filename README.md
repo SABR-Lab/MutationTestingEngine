@@ -4,7 +4,6 @@ A modular and extensible mutation testing framework for Python code, featuring i
 
 ## Features
 
-- **Modular Architecture**: Clean separation of concerns with dedicated modules for core functionality, operators, and engine logic
 - **Multiple Mutation Operators**: Support for numeric, binary operator, boolean, and comparison mutations
 - **HumanEval Integration**: Built-in support for testing against the OpenAI HumanEval dataset
 - **Comprehensive Testing**: Both individual and batch testing capabilities
@@ -29,7 +28,9 @@ dj-mutation-engine/
 
 ## Installation
 
-1. Clone the repository:
+0. You need to have UV installed [https://docs.astral.sh/uv/guides/install-python]
+
+2. Clone the repository:
 ```bash
 git clone <repository-url>
 cd dj-mutation-engine
@@ -37,7 +38,8 @@ cd dj-mutation-engine
 
 2. Install dependencies (optional):
 ```bash
-uv sync
+source .venv/bin/activate
+uv sync 
 ```
 
 ## Quick Start
