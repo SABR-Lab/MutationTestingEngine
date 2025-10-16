@@ -1,0 +1,276 @@
+{
+  "timestamp": "20250801_155836",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/138",
+    "timestamp": "20250801_155836",
+    "tester_version": "1.0",
+    "total_operators_tested": 9,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 14,
+    "killed_mutations": 11,
+    "mutation_score": 0.7857142857142857,
+    "survival_rate": 0.2142857142857143
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/138",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 14,
+    "killed_mutations": 11,
+    "mutation_score": 0.7857142857142857,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 6,
+        "killed_mutations": 5,
+        "survival_rate": 0.16666666666666666,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 9 and n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 9 and n % 2 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp8qwdp2zg.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8qwdp2zg.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8qwdp2zg.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:34.262911",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 7 and n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 7 and n % 2 == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:58:34.460947",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 3 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 3 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpuu49r_19.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuu49r_19.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuu49r_19.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:34.625330",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 1 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 1 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpz_2zubh6.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpz_2zubh6.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpz_2zubh6.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:34.788084",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == 1",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == 1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpgzv1vxtb.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpgzv1vxtb.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpgzv1vxtb.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:34.968887",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == -1",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == -1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpieotnkyp.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpieotnkyp.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpieotnkyp.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.162155",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 6,
+        "mutations_tested": 6
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n // 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n // 2 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpt1iee8a9.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpt1iee8a9.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpt1iee8a9.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.314694",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 != 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 != 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpaw6w1j_2.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpaw6w1j_2.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpaw6w1j_2.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.472465",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "GtEq->LtEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n <= 8 and n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n <= 8 and n % 2 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpy5lqdo8b.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpy5lqdo8b.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpy5lqdo8b.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.635061",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "And->Or": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 or n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 or n % 2 == 0",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkmo08ejy.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkmo08ejy.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkmo08ejy.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.784924",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpnd919rsi.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpnd919rsi.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpnd919rsi.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:35.968313",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == 1",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    return n >= 8 and n % 2 == 1",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7tvuth1_.py\", line 54, in <module>\n    check(is_equal_to_sum_even)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7tvuth1_.py\", line 48, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7tvuth1_.py\", line 41, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:58:36.148684",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"\"\"\"\n    return n >= 8 and n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"\"\"\"\n    return n >= 8 and n % 2 == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:58:36.312869",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n",
+            "mutated_code": "def is_equal_to_sum_even(n):\n    \"\"\"X\"\"\"\n    return n >= 8 and n % 2 == 0",
+            "mutated_complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\ndef is_equal_to_sum_even(n):\n    \"\"\"X\"\"\"\n    return n >= 8 and n % 2 == 0",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:58:36.472924",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n",
+      "canonical_solution": "\n    return n >= 8 and n % 2 == 0\n\n",
+      "test_code": "\n\nimport numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef check(candidate):\n    inputs = [[4], [6], [8], [10], [11], [12], [13], [16], [20], [22], [24], [30], [36], [40], [42], [48], [50], [28], [41], [21], [39], [23], [25], [35], [19], [49], [51], [52], [47], [37], [34], [-79], [29], [53], [57], [56], [-2], [0], [2], [5], [9], [15], [27], [100], [105], [-3], [76], [101], [98], [3], [97], [7], [1], [99], [-50], [102], [-71], [-1], [-72], [-27], [104], [96], [-26], [-39], [-55], [-29], [-66], [14], [-42], [77], [-38], [-30], [-25], [-34], [78], [103], [-65], [-49], [-18], [-7], [75], [-37], [-73], [-51], [106], [64], [-52], [-8], [-6], [-10], [107], [26], [18], [108], [109], [17], [110], [31], [-98], [-87], [-5], [-40], [-88], [-4], [55], [-86], [32], [54], [-68], [-90], [-91], [-78], [-80]]\n    results = [False, False, True, True, False, True, False, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False, False, False, False, True, False, False, True, False, False, False, False, True, False, False, False, False, False, False, False, True, False, False, True, False, True, False, False, False, False, False, False, True, False, False, False, False, True, True, False, False, False, False, False, True, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False, False, True, True, False, False, False, False, False, True, True, True, False, False, True, False, False, False, False, False, False, False, False, False, True, True, False, False, False, False, False]\n    for i, (inp, exp) in enumerate(zip(inputs, results)):\n        assertion(candidate(*inp), exp, 0)\n",
+      "entry_point": "is_equal_to_sum_even",
+      "complete_code": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 9,
+      "execution_timestamp": "2025-08-01T15:58:36.473911"
+    }
+  }
+}

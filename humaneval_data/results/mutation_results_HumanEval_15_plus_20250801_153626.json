@@ -1,0 +1,194 @@
+{
+  "timestamp": "20250801_153626",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/15",
+    "timestamp": "20250801_153626",
+    "tester_version": "1.0",
+    "total_operators_tested": 6,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "survival_rate": 0.2222222222222222
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/15",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 9,
+    "killed_mutations": 7,
+    "mutation_score": 0.7777777777777778,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 2)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 2)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_uxg3ydc.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_uxg3ydc.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_uxg3ydc.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:11.791327",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 0)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 0)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpcogsfyxs.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcogsfyxs.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcogsfyxs.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:11.938763",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Add->Sub": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n - 1)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n - 1)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3vkwcj25.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3vkwcj25.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3vkwcj25.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:12.118440",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpk62ylw38.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpk62ylw38.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpk62ylw38.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:12.303874",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "One->Zero": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 0)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ' '.join(map(str, range(n + 0)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpp9o_m1k1.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp9o_m1k1.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp9o_m1k1.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:12.468045",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->Empty": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\"\"\"\"\n    return ' '.join(map(str, range(n + 1)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\"\"\"\"\n    return ' '.join(map(str, range(n + 1)))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:36:19.123989",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ''.join(map(str, range(n + 1)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return ''.join(map(str, range(n + 1)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpsqspo17d.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsqspo17d.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsqspo17d.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:19.343918",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->X": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\"X\"\"\"\n    return ' '.join(map(str, range(n + 1)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\"X\"\"\"\n    return ' '.join(map(str, range(n + 1)))",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:36:25.872605",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+            "mutated_code": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return 'X'.join(map(str, range(n + 1)))",
+            "mutated_complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n    return 'X'.join(map(str, range(n + 1)))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqe37d0d9.py\", line 59, in <module>\n    check(string_sequence)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqe37d0d9.py\", line 53, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqe37d0d9.py\", line 40, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:36:26.019618",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n",
+      "canonical_solution": "\n\n    return \" \".join(map(str, range(n + 1)))\n\n",
+      "test_code": "import numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef ref_func(n: int) -> str:\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n\n\ndef check(candidate):\n    inputs = [[0], [3], [10], [1], [100], [500], [2], [99], [1000], [10000], [15], [20], [50000], [49999], [101], [50001], [102], [49998], [1001], [18], [37], [36], [501], [84], [16], [10001], [65], [19], [66], [499], [83], [21], [98], [97], [17], [82], [22], [999], [67], [998], [50002], [9999], [75], [38], [498], [502], [96], [23], [50003], [9998], [76], [14], [29], [49997], [31], [85], [9997], [77], [503], [103], [13], [30], [86], [997], [1002], [35], [1003], [63], [39], [12], [68], [24], [1004], [4], [95], [78], [5], [25], [28], [50004], [104], [40], [9996], [64], [74], [10002], [94], [41], [105], [32], [73], [81], [26], [72], [6], [996], [42], [93], [79], [1000000], [1000001], [1000002], [999999], [1000003], [1000004], [34], [33], [27], [999998], [1000005], [999997], [87], [88], [89], [90], [1000006], [999996], [999995], [1000007], [7], [43], [44], [45], [999994], [999993], [1000008], [999992], [62], [61], [60], [59], [1000010], [999991], [1000009], [1000011]]\n    for i, inp in enumerate(inputs):\n        assertion(candidate(*inp), ref_func(*inp), 0)\n",
+      "entry_point": "string_sequence",
+      "complete_code": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n\n\n    return \" \".join(map(str, range(n + 1)))\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 6,
+      "execution_timestamp": "2025-08-01T15:36:26.020581"
+    }
+  }
+}

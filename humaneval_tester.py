@@ -205,7 +205,7 @@ class HumanEvalTester:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         # Clean task_id for filename (replace problematic characters)
         clean_task_id = result['task_id'].replace('/', '_').replace('\\', '_')
-        filename = f"{filename_prefix}_{clean_task_id}_{timestamp}.json"
+        filename = f"{filename_prefix}_{clean_task_id}_{self.dataset_type}_{timestamp}.json"
         filepath = self.results_dir / filename
         
         # Add metadata
@@ -231,7 +231,7 @@ class HumanEvalTester:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         # Clean task_id for filename (replace problematic characters)
         clean_task_id = results['task_id'].replace('/', '_').replace('\\', '_')
-        filename = f"{filename_prefix}_{clean_task_id}_{timestamp}.json"
+        filename = f"{filename_prefix}_{clean_task_id}_{self.dataset_type}_{timestamp}.json"
         filepath = self.results_dir / filename
         
         # Add metadata
@@ -402,23 +402,13 @@ class HumanEvalTester:
         Returns:
             Tuple of (success, output/error message)
         """
-        # Handle different test formats
-        if self.dataset_type == "plus" and entry_point:
-            # HumanEval+ format: test_code might be direct test inputs
-            if not test_code.strip().startswith("def check("):
-                # If test_code doesn't contain a check function, create one
-                full_code = f"{code}\n\n# Test cases for HumanEval+\nif __name__ == '__main__':\n    try:\n{test_code}\n        print('All tests passed!')\n    except Exception as e:\n        print(f'Test failed: {{e}}')\n        raise"
-            else:
-                # Standard check function format
-                full_code = f"{code}\n\n{test_code}\n\n# Execute the check function\nif __name__ == '__main__':\n    try:\n        check({entry_point})\n        print('All tests passed!')\n    except Exception as e:\n        print(f'Test failed: {{e}}')\n        raise"
-        elif entry_point:
+        if entry_point:
             # Original HumanEval format with check function
             full_code = f"{code}\n\n{test_code}\n\n# Execute the check function\nif __name__ == '__main__':\n    try:\n        check({entry_point})\n        print('All tests passed!')\n    except Exception as e:\n        print(f'Test failed: {{e}}')\n        raise"
         else:
             # Fallback: just combine code and tests
             full_code = f"{code}\n\n{test_code}"
             return False, "No entry point provided for execution"
-        
         try:
             # Create a temporary file to execute the code
             with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
@@ -467,6 +457,7 @@ class HumanEvalTester:
         prompt = problem['prompt']
         canonical_solution = problem['canonical_solution']
         test = problem['test']
+        print(test)
         entry_point = problem['entry_point']
         
         dataset_name = "HumanEval+" if self.dataset_type == "plus" else "HumanEval"

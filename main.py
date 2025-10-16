@@ -28,5 +28,5 @@ if __name__ == "__main__":
     for i in tqdm(range(1,163)):
         # Run mutation testing demo for problem 1
         print(f"Running mutation testing demo for problem {i}...")
-        subprocess.run(["python", "humaneval_tester.py", "--mutate", str(i), "--max-mutations", "10"], check=True)
+        subprocess.run(["python", "humaneval_tester.py", "--mutate", str(i), "--max-mutations", "10","--dataset","plus"], check=True)
 

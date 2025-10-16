@@ -1,0 +1,362 @@
+{
+  "timestamp": "20250801_155000",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/83",
+    "timestamp": "20250801_155000",
+    "tester_version": "1.0",
+    "total_operators_tested": 10,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 19,
+    "mutation_score": 0.9047619047619048,
+    "survival_rate": 0.09523809523809523
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/83",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 19,
+    "mutation_score": 0.9047619047619048,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 10,
+        "killed_mutations": 10,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 2:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 2:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo1u_vcc0.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo1u_vcc0.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo1u_vcc0.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:50.054006",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 0:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 0:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo6gntfc4.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo6gntfc4.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo6gntfc4.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:50.276756",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 2\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 2\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpak7vfj8u.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpak7vfj8u.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpak7vfj8u.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:50.512651",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 0\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 0\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp79i381_u.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp79i381_u.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp79i381_u.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:50.775699",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 19 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 19 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpki438p3i.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpki438p3i.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpki438p3i.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:51.100659",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 17 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 17 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphn2kmuus.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmphn2kmuus.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmphn2kmuus.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:51.364142",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 11 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 11 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpsf5q7ufa.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsf5q7ufa.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsf5q7ufa.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:51.613600",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 9 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 9 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfiwgcfyb.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfiwgcfyb.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfiwgcfyb.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:51.805452",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 3)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 3)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp9ti3qwz3.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp9ti3qwz3.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp9ti3qwz3.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:52.040551",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 1)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 1)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3jnwhffn.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3jnwhffn.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3jnwhffn.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:52.223436",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 10,
+        "mutations_tested": 10
+      },
+      "Sub->Add": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n + 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n + 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpcu262x74.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcu262x74.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpcu262x74.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:52.455702",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Div": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 / 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 / 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpppg_ixpf.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpppg_ixpf.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpppg_ixpf.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:52.658452",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Pow->Mult": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * (10 * (n - 2))",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 * (10 * (n - 2))",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqr1cso41.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqr1cso41.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqr1cso41.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:52.828981",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Pow": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 ** 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return 18 ** 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpa1zpdsp_.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpa1zpdsp_.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpa1zpdsp_.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.044026",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n != 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n != 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpsoan1eka.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsoan1eka.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpsoan1eka.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.216576",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpze51njwp.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpze51njwp.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpze51njwp.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.367856",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 1\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpul2se33w.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpul2se33w.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpul2se33w.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.540439",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 0:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 0:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkm_0wc0c.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkm_0wc0c.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkm_0wc0c.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.736977",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 0\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    if n == 1:\n        return 0\n    return 18 * 10 ** (n - 2)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2a99g3x7.py\", line 57, in <module>\n    check(starts_one_ends)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2a99g3x7.py\", line 51, in check\n    assertion(candidate(*inp), ref_func(*inp), 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2a99g3x7.py\", line 37, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:49:53.914458",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"\"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"\"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:49:57.257213",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+            "mutated_code": "def starts_one_ends(n):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "mutated_complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\ndef starts_one_ends(n):\n    \"\"\"X\"\"\"\n    if n == 1:\n        return 1\n    return 18 * 10 ** (n - 2)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:50:00.453004",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n",
+      "canonical_solution": "\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n",
+      "test_code": "import numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef ref_func(n):\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n\n\ndef check(candidate):\n    inputs = [[1], [2], [3], [4], [5], [6], [10], [12], [15], [20], [30], [8], [25], [100], [500], [29], [14], [26], [19], [13], [9], [101], [28], [21], [24], [7], [102], [99], [16], [501], [17], [22], [98], [11], [499], [1000], [1234], [9876], [31415], [1000000], [99999], [9877], [9878], [1235], [1001], [9879], [9880], [999999], [9881], [31414], [78], [999998], [999], [1002], [100000], [9882], [1233], [80], [999997], [1236], [1237], [1232], [79], [90], [31416], [31413], [31412], [31411], [1003], [999996], [68], [69], [1004], [97], [23], [9883], [89], [31417], [1231], [67], [100001], [50], [94], [82], [53], [52], [51], [9874], [31418], [77], [54], [9875], [76], [9873], [1000001], [96], [49], [1000002], [75], [998], [35], [39], [48], [34], [70], [38], [95], [997], [47]]\n    for i, inp in enumerate(inputs):\n        assertion(candidate(*inp), ref_func(*inp), 0)\n",
+      "entry_point": "starts_one_ends",
+      "complete_code": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n\n    if n == 1: return 1\n    return 18 * 10 ** (n - 2)\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 10,
+      "execution_timestamp": "2025-08-01T15:50:00.453958"
+    }
+  }
+}

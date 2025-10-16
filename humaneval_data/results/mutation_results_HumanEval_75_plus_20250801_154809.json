@@ -1,0 +1,588 @@
+{
+  "timestamp": "20250801_154809",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/75",
+    "timestamp": "20250801_154809",
+    "tester_version": "1.0",
+    "total_operators_tested": 13,
+    "operators_with_errors": 4
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 35,
+    "killed_mutations": 19,
+    "mutation_score": 0.5428571428571428,
+    "survival_rate": 0.4571428571428572
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/75",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 35,
+    "killed_mutations": 19,
+    "mutation_score": 0.5428571428571428,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 9,
+        "killed_mutations": 4,
+        "survival_rate": 0.5555555555555556,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 2:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 2:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:52.537960",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 0:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 0:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:52.685787",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return 1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return 1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7sum5ztb.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7sum5ztb.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7sum5ztb.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:52.853461",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return -1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return -1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_bgm5yq7.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_bgm5yq7.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_bgm5yq7.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:53.034662",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [2] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [2] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:53.257501",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [0] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [0] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6t_zik5s.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6t_zik5s.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6t_zik5s.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:53.481712",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 2)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 2)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:53.678627",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 0)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 0)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpqma1nofh.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpqma1nofh.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmpqma1nofh.py\", line 22, in is_multiply_prime\n    if isprime[i]:\n       ~~~~~~~^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-08-01T15:47:53.868218",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(3, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(3, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:54.038213",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(1, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(1, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpyckkzmmh.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpyckkzmmh.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpyckkzmmh.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:54.236135",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 28,
+        "mutations_tested": 10
+      },
+      "Add->Sub": {
+        "total_mutations": 4,
+        "killed_mutations": 1,
+        "survival_rate": 0.75,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a - 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a - 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmppxbp8ij4.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmppxbp8ij4.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmppxbp8ij4.py\", line 24, in is_multiply_prime\n    isprime[j] = False\n    ~~~~~~~^^^\nIndexError: list assignment index out of range\n",
+            "timestamp": "2025-08-01T15:47:54.468894",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a - 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a - 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:54.731054",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i - i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i - i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpuf7uriqw.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuf7uriqw.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuf7uriqw.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:54.919806",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a - 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a - 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:55.101390",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a - 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a - 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:47:55.285493",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 5,
+        "mutations_tested": 5
+      },
+      "Mult->Div": {
+        "error": "division by zero"
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp // i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp // i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpd8rymufy.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpd8rymufy.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpd8rymufy.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:55.674585",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Pow": {
+        "error": "division by zero"
+      },
+      "AddEq->SubEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt -= 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt -= 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpnwppefn2.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpnwppefn2.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpnwppefn2.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:56.052053",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i != 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i != 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7lmte_5x.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7lmte_5x.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7lmte_5x.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:56.218892",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt != 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt != 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkacypqde.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkacypqde.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkacypqde.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:56.419516",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "LtEq->GtEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a >= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a >= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpyx__sgnm.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpyx__sgnm.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpyx__sgnm.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:47:56.577110",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "And->Or": {
+        "error": "division by zero"
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpk7mjz_3n.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpk7mjz_3n.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpk7mjz_3n.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:06.778641",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpog_rj79g.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpog_rj79g.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpog_rj79g.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:06.943732",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "True->False": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [False] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [False] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3b_ina5w.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3b_ina5w.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3b_ina5w.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:07.106699",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "False->True": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return True\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return True\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpn4tpqmn2.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpn4tpqmn2.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpn4tpqmn2.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:07.281714",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = True\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = True\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:07.455232",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Zero->One": {
+        "total_mutations": 4,
+        "killed_mutations": 3,
+        "survival_rate": 0.25,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return 1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return 1\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4gkuqxch.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4gkuqxch.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4gkuqxch.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:07.623819",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = 1\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = 1\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:07.809636",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (1, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (1, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp1tvvun4p.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp1tvvun4p.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp1tvvun4p.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:07.976343",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 1:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 1:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpz1xeie46.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpz1xeie46.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpz1xeie46.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:08.145700",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 4,
+        "mutations_tested": 4
+      },
+      "One->Zero": {
+        "total_mutations": 6,
+        "killed_mutations": 2,
+        "survival_rate": 0.6666666666666666,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 0:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 0:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:08.315833",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [0] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [0] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpj6zft8_o.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpj6zft8_o.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpj6zft8_o.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:08.482672",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 0)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 0)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu540i610.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu540i610.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmpu540i610.py\", line 22, in is_multiply_prime\n    if isprime[i]:\n       ~~~~~~~^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-08-01T15:48:08.640748",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 0):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 0):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:08.793780",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 0, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 0, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:08.959152",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 0):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 0):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:09.127530",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 0\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 0\n    return cnt == 3",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp5bitqwkx.py\", line 68, in <module>\n    check(is_multiply_prime)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp5bitqwkx.py\", line 62, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp5bitqwkx.py\", line 55, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:48:09.305021",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 7,
+        "mutations_tested": 7
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"\"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"\"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:09.493955",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+            "mutated_code": "def is_multiply_prime(a):\n    \"\"\"X\"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "mutated_complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\ndef is_multiply_prime(a):\n    \"\"\"X\"\"\"\n    if a <= 1:\n        return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = (0, a)\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:48:09.677293",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "List->Empty": {
+        "error": "division by zero"
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n",
+      "canonical_solution": "\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n",
+      "test_code": "\n\nimport numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef check(candidate):\n    inputs = [[5], [30], [8], [10], [33], [49], [77], [91], [99], [6], [90], [98], [25], [21], [48], [20], [22], [32], [26], [78], [19], [47], [31], [29], [-98], [-37], [-38], [28], [18], [23], [-92], [-2], [57], [-99], [58], [56], [-1], [92], [1], [-80], [34], [-75], [-100], [-95], [16], [-94], [17], [59], [-7], [93], [-82], [-15], [-81], [-96], [-74], [2], [3], [7], [97], [42], [-101], [43], [44], [45], [-56], [60], [-55], [46], [62], [55], [61], [41], [40], [-57], [63], [-102], [52], [-72], [-97], [94], [12], [89], [53], [0], [64], [-58], [65], [-71], [95], [35], [-70], [96], [-59], [15], [-33]]\n    results = [False, True, True, False, False, False, False, False, True, False, False, True, False, False, False, True, False, False, False, True, False, False, False, False, False, False, False, True, True, False, False, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, True, True, False, False, False, False, False, False, False, False, False, False, True, False, True, False, False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False]\n    for i, (inp, exp) in enumerate(zip(inputs, results)):\n        assertion(candidate(*inp), exp, 0)\n",
+      "entry_point": "is_multiply_prime",
+      "complete_code": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 13,
+      "execution_timestamp": "2025-08-01T15:48:09.864660"
+    }
+  }
+}

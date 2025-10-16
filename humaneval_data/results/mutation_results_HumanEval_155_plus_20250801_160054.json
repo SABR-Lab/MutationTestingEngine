@@ -1,0 +1,335 @@
+{
+  "timestamp": "20250801_160054",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/155",
+    "timestamp": "20250801_160054",
+    "tester_version": "1.0",
+    "total_operators_tested": 7,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 19,
+    "mutation_score": 0.9047619047619048,
+    "survival_rate": 0.09523809523809523
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/155",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 21,
+    "killed_mutations": 19,
+    "mutation_score": 0.9047619047619048,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 8,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu578f6l9.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu578f6l9.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu578f6l9.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:49.499890",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (-1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (-1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7038ovlr.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7038ovlr.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7038ovlr.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:49.771163",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpef_qr5oy.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpef_qr5oy.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpef_qr5oy.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:50.057594",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, -1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, -1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpa1l56sqb.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpa1l56sqb.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpa1l56sqb.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:50.295490",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 2\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 2\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpl420bxq3.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpl420bxq3.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpl420bxq3.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:50.601636",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 0\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 0\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpw40r36pm.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpw40r36pm.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpw40r36pm.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:50.880329",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 2\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 2\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpystxhone.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpystxhone.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpystxhone.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:51.084338",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 0\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 0\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmply31bfv6.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmply31bfv6.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmply31bfv6.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:51.272546",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 8,
+        "mutations_tested": 8
+      },
+      "AddEq->SubEq": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even -= 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even -= 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp0wru0uv7.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp0wru0uv7.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp0wru0uv7.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:51.509307",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd -= 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd -= 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp8hen6gpi.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8hen6gpi.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8hen6gpi.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:51.739470",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo4eakbth.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo4eakbth.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo4eakbth.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:51.967342",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (1, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp13j4s3m2.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp13j4s3m2.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp13j4s3m2.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:52.230963",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 1)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpea4yft71.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpea4yft71.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpea4yft71.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:52.437567",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 0\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 0\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpp1elharu.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp1elharu.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp1elharu.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:52.648576",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 0\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 0\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpwx1jfe1v.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwx1jfe1v.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpwx1jfe1v.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:52.841582",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "String->Empty": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"\"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"\"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T16:00:53.021690",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpntultm93.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpntultm93.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpntultm93.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:53.245567",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprf9pnn6x.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprf9pnn6x.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprf9pnn6x.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:53.480919",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->X": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"X\"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"X\"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T16:00:53.709696",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in 'X':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in 'X':\n            even += 1\n        if ch in '13579':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpykki4oz5.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpykki4oz5.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpykki4oz5.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:53.952234",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+            "mutated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in 'X':\n            odd += 1\n    return (even, odd)",
+            "mutated_complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n    even, odd = (0, 0)\n    for ch in str(num):\n        if ch in '02468':\n            even += 1\n        if ch in 'X':\n            odd += 1\n    return (even, odd)",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3va8tn_1.py\", line 60, in <module>\n    check(even_odd_count)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3va8tn_1.py\", line 54, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3va8tn_1.py\", line 47, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T16:00:54.195120",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n",
+      "canonical_solution": "\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n",
+      "test_code": "\n\nimport numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef check(candidate):\n    inputs = [[7], [-78], [3452], [346211], [-345821], [-2], [-45347], [0], [2368], [-111], [-2468031], [1010101], [-123456789], [-590], [125890], [444444444], [-1111111], [-222222222], [-591], [444444443], [444444445], [-222222221], [-1111110], [-592], [-222222224], [-222222223], [-7], [2369], [-2468032], [-112], [125889], [-589], [-588], [-123456790], [-593], [-2468033], [-222222225], [-222222226], [2367], [-110], [-113], [444444442], [1010100], [-114], [-67], [-586], [-1111112], [1010099], [1010098], [-222222227], [-2468034], [-123456791], [2366], [-9], [-123456792], [-587], [-1111113], [-2468035], [444444446], [11], [-222222220], [444444447], [-109], [-6], [-585], [125891], [-93], [-10], [12], [125888], [-115], [125892], [13], [-48], [37], [-97], [-94], [-92], [-98], [-11], [-1], [36], [2370], [14], [-1111109], [15], [-222222228], [-123456793], [34], [-16], [35], [10], [-68], [444444441], [-1111114], [-69], [-222222229], [444444440], [-15], [444444439], [33], [-5], [-2468036], [-1111115], [-53], [-358947934856], [54837398243239], [-78653034582], [-1021021021021021021021021021021021021021021021021], [-923456789], [9876543210], [246813579], [-1234567890987654321], [11111], [-2222], [54837398243240], [-923456790], [11112], [-358947934857], [-1234567890987654320], [-923456792], [-2221], [-1021021021021021021021021021021021021021021021020], [-2219], [54837398243238], [-70], [-71], [11110], [-2223], [-1021021021021021021021021021021021021021021021019], [-18], [-358947934858], [-2220], [-1021021021021021021021021021021021021021021021018], [-923456788], [3], [-1234567890987654322], [-17], [-78653034583], [54837398243241], [246813578], [-1021021021021021021021021021021021021021021021022], [-85], [-923456793], [-78653034584], [11109], [-8], [-59], [-19], [-66], [-923456794], [-923456787], [-58], [-923456785], [-2218], [9876543211], [-80], [46], [-358947934855], [-60], [-81], [4], [-1234567890987654323], [246813577], [-12], [-923456786], [-1021021021021021021021021021021021021021021021017], [-358947934854], [11107], [19], [5], [9876543212], [-1021021021021021021021021021021021021021021021016], [54837398243242], [-61], [-14], [18], [-1021021021021021021021021021021021021021021021015], [11106], [-13], [20], [-56], [-923456795], [11108], [-1021021021021021021021021021021021021021021021023], [17], [2], [-923456784], [-65], [1], [54837398243243], [89], [-64], [-82], [-63], [64], [11105], [90], [-358947934859], [99], [65], [11104], [11113], [-83], [6], [-62], [9876543213], [53], [-84], [-2224], [66], [11103], [-358947934853], [-86], [67], [-35], [-1021021021021021021021021021021021021021021021013], [-2217], [-2216], [9876543215], [-923456783], [-3], [-57], [-77777777777777777777], [22222222222], [-33], [13579], [-2468], [2147483647], [11111111111111111111], [-11111111111111111111], [-2147483648], [9876543209], [9876543208], [246813580], [246813581], [-1234567890987654319], [16], [78], [77], [76], [-78653034581], [-1234567890987654318], [75], [-2225], [58], [-78653034585], [246813576], [39], [246813583], [-1234567890987654324], [38], [48], [-21], [40]]\n    results = [(0, 1), (1, 1), (2, 2), (3, 3), (3, 3), (1, 0), (2, 3), (1, 0), (3, 1), (0, 3), (5, 2), (3, 4), (4, 5), (1, 2), (3, 3), (9, 0), (0, 7), (9, 0), (0, 3), (8, 1), (8, 1), (8, 1), (1, 6), (1, 2), (9, 0), (8, 1), (0, 1), (2, 2), (6, 1), (1, 2), (3, 3), (1, 2), (2, 1), (4, 5), (0, 3), (5, 2), (8, 1), (9, 0), (2, 2), (1, 2), (0, 3), (9, 0), (4, 3), (1, 2), (1, 1), (2, 1), (1, 6), (3, 4), (4, 3), (8, 1), (6, 1), (3, 6), (3, 1), (0, 1), (4, 5), (1, 2), (0, 7), (5, 2), (9, 0), (0, 2), (9, 0), (8, 1), (1, 2), (1, 0), (1, 2), (2, 4), (0, 2), (1, 1), (1, 1), (4, 2), (0, 3), (3, 3), (0, 2), (2, 0), (0, 2), (0, 2), (1, 1), (1, 1), (1, 1), (0, 2), (0, 1), (1, 1), (2, 2), (1, 1), (1, 6), (0, 2), (9, 0), (3, 6), (1, 1), (1, 1), (0, 2), (1, 1), (2, 0), (8, 1), (1, 6), (1, 1), (8, 1), (9, 0), (0, 2), (7, 2), (0, 2), (0, 1), (6, 1), (0, 7), (0, 2), (5, 7), (6, 8), (6, 5), (32, 17), (4, 5), (5, 5), (4, 5), (9, 10), (0, 5), (4, 0), (8, 6), (4, 5), (1, 4), (4, 8), (10, 9), (4, 5), (3, 1), (33, 16), (2, 2), (7, 7), (1, 1), (0, 2), (1, 4), (3, 1), (31, 18), (1, 1), (5, 7), (4, 0), (32, 17), (5, 4), (0, 1), (10, 9), (0, 2), (5, 6), (7, 7), (5, 4), (33, 16), (1, 1), (3, 6), (6, 5), (1, 4), (1, 0), (0, 2), (0, 2), (2, 0), (4, 5), (4, 5), (1, 1), (4, 5), (3, 1), (4, 6), (2, 0), (2, 0), (4, 8), (2, 0), (1, 1), (1, 0), (9, 10), (4, 5), (1, 1), (5, 4), (31, 18), (5, 7), (1, 4), (0, 2), (0, 1), (5, 5), (32, 17), (8, 6), (1, 1), (1, 1), (1, 1), (31, 18), (2, 3), (0, 2), (2, 0), (1, 1), (3, 6), (2, 3), (32, 17), (0, 2), (1, 0), (5, 4), (1, 1), (0, 1), (7, 7), (1, 1), (2, 0), (2, 0), (1, 1), (2, 0), (1, 4), (1, 1), (4, 8), (0, 2), (1, 1), (2, 3), (0, 5), (1, 1), (1, 0), (2, 0), (4, 6), (0, 2), (2, 0), (4, 0), (2, 0), (1, 4), (4, 8), (2, 0), (1, 1), (0, 2), (31, 18), (2, 2), (3, 1), (4, 6), (4, 5), (0, 1), (0, 2), (0, 20), (11, 0), (0, 2), (0, 5), (4, 0), (6, 4), (0, 20), (0, 20), (7, 3), (5, 5), (6, 4), (6, 3), (5, 4), (8, 11), (1, 1), (1, 1), (0, 2), (1, 1), (5, 6), (9, 10), (0, 2), (3, 1), (1, 1), (5, 6), (5, 4), (0, 2), (5, 4), (10, 9), (1, 1), (2, 0), (1, 1), (2, 0)]\n    for i, (inp, exp) in enumerate(zip(inputs, results)):\n        assertion(candidate(*inp), exp, 0)\n",
+      "entry_point": "even_odd_count",
+      "complete_code": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 7,
+      "execution_timestamp": "2025-08-01T16:00:54.197365"
+    }
+  }
+}

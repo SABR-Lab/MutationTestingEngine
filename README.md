@@ -37,7 +37,7 @@ cd dj-mutation-engine
 
 2. Install dependencies (optional):
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ## Quick Start

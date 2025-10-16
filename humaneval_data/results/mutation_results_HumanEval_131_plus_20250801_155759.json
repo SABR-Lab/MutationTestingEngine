@@ -1,0 +1,444 @@
+{
+  "timestamp": "20250801_155759",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/131",
+    "timestamp": "20250801_155759",
+    "tester_version": "1.0",
+    "total_operators_tested": 13,
+    "operators_with_errors": 0
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 26,
+    "killed_mutations": 23,
+    "mutation_score": 0.8846153846153846,
+    "survival_rate": 0.11538461538461542
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/131",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 26,
+    "killed_mutations": 23,
+    "mutation_score": 0.8846153846153846,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 10,
+        "killed_mutations": 9,
+        "survival_rate": 0.1,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp7l98byuf.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp7l98byuf.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp7l98byuf.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:55.184213",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (-1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (-1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpltfwxjmy.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpltfwxjmy.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpltfwxjmy.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:55.388347",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 2)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 2)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdtbnpxsw.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpdtbnpxsw.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdtbnpxsw.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:55.576543",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 0)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 0)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpd3d5r69p.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpd3d5r69p.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpd3d5r69p.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:55.758510",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 3 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 3 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3sotglbd.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp3sotglbd.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3sotglbd.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:55.925842",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 1 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 1 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpo_cl5jlz.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpo_cl5jlz.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpo_cl5jlz.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:56.126928",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 2:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 2:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprc9zk6so.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmprc9zk6so.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprc9zk6so.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:56.303853",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 0:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 0:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp6dh5hygb.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp6dh5hygb.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp6dh5hygb.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:56.494314",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 2\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 2\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:57:56.707049",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 0\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 0\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp2x9rjc01.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp2x9rjc01.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp2x9rjc01.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:56.924351",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 12,
+        "mutations_tested": 10
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) // 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) // 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpm03q_ncj.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpm03q_ncj.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpm03q_ncj.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:57.138996",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "MulEq->DivEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod /= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod /= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpged9b3d5.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpged9b3d5.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpged9b3d5.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:57.341776",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 != 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 != 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpdvctm7uh.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpdvctm7uh.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpdvctm7uh.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:57.528268",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove Not": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp_k795wtm.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp_k795wtm.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp_k795wtm.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:57.764822",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp4pydn40p.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp4pydn40p.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp4pydn40p.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:57.941500",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "True->False": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = False\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = False\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpocanezl5.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpocanezl5.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpocanezl5.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.130146",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "False->True": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (True, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (True, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvxd461ln.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpvxd461ln.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvxd461ln.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.313339",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (1, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpj0ftlkxb.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpj0ftlkxb.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpj0ftlkxb.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.485634",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 1 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 1 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpuvkjrx1q.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpuvkjrx1q.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpuvkjrx1q.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.688820",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      },
+      "One->Zero": {
+        "total_mutations": 3,
+        "killed_mutations": 3,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 0)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 0)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3yerckdy.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmp3yerckdy.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3yerckdy.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.836231",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 0:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 0:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpjti2qstl.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpjti2qstl.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpjti2qstl.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:58.984409",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 0\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = 0\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu4ek_bpb.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpu4ek_bpb.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu4ek_bpb.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:59.146117",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"\"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"\"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:57:59.299243",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"X\"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"X\"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:57:59.483514",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Ternary Condition": {
+        "total_mutations": 2,
+        "killed_mutations": 2,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if True else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if True else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpllljlmjm.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpllljlmjm.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpllljlmjm.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:59.674061",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+            "mutated_code": "def digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if False else prod",
+            "mutated_complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n    has_odd, prod = (False, 1)\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if False else prod",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpmpdjxclk.py\", line 61, in <module>\n    check(digits)\n    ~~~~~^^^^^^^^\n  File \"/tmp/tmpmpdjxclk.py\", line 55, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpmpdjxclk.py\", line 48, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:57:59.847324",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 2,
+        "mutations_tested": 2
+      }
+    },
+    "problem_info": {
+      "prompt": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n",
+      "canonical_solution": "\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n",
+      "test_code": "\n\nimport numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef check(candidate):\n    inputs = [[5], [54], [120], [5014], [98765], [5576543], [2468], [951], [246], [135797531], [888], [182135], [703], [999], [111], [1001], [3], [952], [889], [998], [2], [182136], [25], [701], [4], [24], [997], [247], [6], [953], [135797532], [7], [248], [23], [996], [135797533], [995], [994], [891], [26], [8], [112], [22], [950], [702], [1000], [704], [182137], [893], [993], [135797534], [135797535], [245], [249], [9], [244], [890], [47], [992], [700], [135797530], [705], [243], [27], [182134], [887], [46], [894], [699], [45], [707], [892], [182138], [182139], [1002], [113], [1], [88], [706], [250], [110], [949], [698], [242], [11], [135797529], [1003], [109], [135797536], [182133], [43], [135797538], [241], [71], [114], [28], [135797539], [10], [89], [954], [240], [44], [886], [115], [70], [991], [323456789101112131415161718192021222324252627282930313233343536], [182937457814614279640075438629345987263878749129823578184719333882443], [8843924584737538929273870549395092387583092748327447402387489518947358439582352948], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347584], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598343], [13579], [123456789], [945], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253], [182937457814614279640075438629345987263878749129823578184719333882442], [182937457814614279640075438629345987263878749129823578184719333882444], [123456788], [123456787], [944], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347585], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347583], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515254], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598344], [323456789101112131415161718192021222324252627282930313233343535], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515252], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598342], [182937457814614279640075438629345987263878749129823578184719333882441], [182937457814614279640075438629345987263878749129823578184719333882445], [943], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515251], [8843924584737538929273870549395092387583092748327447402387489518947358439582352947], [323456789101112131415161718192021222324252627282930313233343537], [323456789101112131415161718192021222324252627282930313233343534], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347587], [323456789101112131415161718192021222324252627282930313233343538], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347586], [182937457814614279640075438629345987263878749129823578184719333882446], [942], [182937457814614279640075438629345987263878749129823578184719333882448], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347582], [182937457814614279640075438629345987263878749129823578184719333882447], [941], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347581], [8843924584737538929273870549395092387583092748327447402387489518947358439582352946], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598341], [123456786], [8843924584737538929273870549395092387583092748327447402387489518947358439582352949], [13578], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515255], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515256], [8843924584737538929273870549395092387583092748327447402387489518947358439582352945], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598346], [8843924584737538929273870549395092387583092748327447402387489518947358439582352944], [8843924584737538929273870549395092387583092748327447402387489518947358439582352950], [53], [940], [52], [182937457814614279640075438629345987263878749129823578184719333882440], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515257], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515250], [946], [73], [947], [182937457814614279640075438629345987263878749129823578184719333882449], [55], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598340], [323456789101112131415161718192021222324252627282930313233343539], [16], [69], [15], [13577], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598345], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598347], [30], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347588], [74], [64], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515249], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515258], [72], [17], [8843924584737538929273870549395092387583092748327447402387489518947358439582352951], [14], [51], [95], [94], [123456785], [57], [8843924584737538929273870549395092387583092748327447402387489518947358439582352943], [32], [65], [62], [68], [182937457814614279640075438629345987263878749129823578184719333882439], [123456784], [18], [33], [323456789101112131415161718192021222324252627282930313233343533], [96], [76], [124834738571930288374895092375830274843252127479238048384758941827309258429539458173975894729347589], [948], [75], [13580], [13], [182937457814614279640075438629345987263878749129823578184719333882450], [123456783], [1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515248], [100], [11111111111111111111], [22222222222], [333333333333], [13581], [123456790], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598348], [3902482539585903843732859374089573948579380957409378540930757943758435987234095873947598349], [13576], [8843924584737538929273870549395092387583092748327447402387489518947358439582352942], [8843924584737538929273870549395092387583092748327447402387489518947358439582352941], [13582], [8843924584737538929273870549395092387583092748327447402387489518947358439582352940], [123456791], [8843924584737538929273870549395092387583092748327447402387489518947358439582352939], [323456789101112131415161718192021222324252627282930313233343532], [13583], [8843924584737538929273870549395092387583092748327447402387489518947358439582352938], [21], [49], [20], [13585], [123456792], [323456789101112131415161718192021222324252627282930313233343531], [99], [48]]\n    results = [5, 5, 1, 5, 315, 2625, 0, 45, 0, 99225, 0, 15, 21, 729, 1, 1, 3, 45, 9, 81, 0, 3, 5, 7, 0, 0, 567, 7, 0, 135, 99225, 7, 0, 3, 81, 297675, 405, 81, 9, 0, 0, 1, 0, 45, 7, 1, 7, 21, 27, 243, 99225, 496125, 5, 9, 9, 0, 9, 7, 81, 7, 99225, 35, 3, 7, 3, 7, 0, 9, 81, 5, 49, 9, 3, 27, 1, 3, 1, 0, 7, 5, 1, 81, 9, 0, 1, 297675, 3, 9, 99225, 9, 3, 99225, 1, 7, 1, 0, 893025, 1, 9, 45, 0, 0, 0, 5, 7, 81, 83053267329375, 2374385525072174368125, 9200959088342885342286486328125, 47338934509524145086063972158203125, 149749111277833459456445972784093017578125, 945, 945, 45, 83439724563916998046875, 791461841690724789375, 791461841690724789375, 105, 735, 9, 236694672547620725430319860791015625, 142016803528572435258191916474609375, 27813241521305666015625, 49916370425944486485481990928031005859375, 415266336646875, 27813241521305666015625, 49916370425944486485481990928031005859375, 791461841690724789375, 3957309208453623946875, 27, 27813241521305666015625, 64406713618400197396005404296875, 581372871305625, 83053267329375, 331372541566669015602447805107421875, 83053267329375, 47338934509524145086063972158203125, 791461841690724789375, 9, 791461841690724789375, 47338934509524145086063972158203125, 5540232891835073525625, 9, 47338934509524145086063972158203125, 9200959088342885342286486328125, 49916370425944486485481990928031005859375, 105, 82808631795085968080578376953125, 105, 139066207606528330078125, 27813241521305666015625, 46004795441714426711432431640625, 49916370425944486485481990928031005859375, 9200959088342885342286486328125, 46004795441714426711432431640625, 15, 9, 5, 791461841690724789375, 194692690649139662109375, 27813241521305666015625, 9, 21, 63, 7123156575216523104375, 25, 49916370425944486485481990928031005859375, 747479405964375, 1, 9, 5, 735, 249581852129722432427409954640155029296875, 349414592981611405398373936496217041015625, 3, 47338934509524145086063972158203125, 7, 0, 50063834738350198828125, 27813241521305666015625, 7, 7, 46004795441714426711432431640625, 1, 5, 45, 9, 525, 35, 27602877265028656026859458984375, 3, 5, 0, 0, 21369469725649569313125, 105, 1, 9, 249159801988125, 9, 7, 426050410585717305774575749423828125, 9, 35, 15, 3, 3957309208453623946875, 315, 5562648304261133203125, 1, 1, 0, 531441, 15, 945, 49916370425944486485481990928031005859375, 449247333833500378369337918352279052734375, 105, 9200959088342885342286486328125, 9200959088342885342286486328125, 15, 9200959088342885342286486328125, 945, 248425895385257904241735130859375, 83053267329375, 45, 27602877265028656026859458984375, 1, 9, 0, 75, 945, 83053267329375, 81, 0]\n    for i, (inp, exp) in enumerate(zip(inputs, results)):\n        assertion(candidate(*inp), exp, 0)\n",
+      "entry_point": "digits",
+      "complete_code": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 13,
+      "execution_timestamp": "2025-08-01T15:57:59.847980"
+    }
+  }
+}

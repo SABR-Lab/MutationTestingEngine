@@ -1,0 +1,500 @@
+{
+  "timestamp": "20250801_154617",
+  "test_type": "mutation_testing",
+  "metadata": {
+    "task_id": "HumanEval/59",
+    "timestamp": "20250801_154617",
+    "tester_version": "1.0",
+    "total_operators_tested": 13,
+    "operators_with_errors": 4
+  },
+  "summary": {
+    "original_passes": true,
+    "total_mutations": 25,
+    "killed_mutations": 17,
+    "mutation_score": 0.68,
+    "survival_rate": 0.31999999999999995
+  },
+  "detailed_results": {
+    "task_id": "HumanEval/59",
+    "dataset_type": "plus",
+    "original_passes": true,
+    "total_mutations": 25,
+    "killed_mutations": 17,
+    "mutation_score": 0.68,
+    "mutation_results": {
+      "NumberReplacer": {
+        "total_mutations": 8,
+        "killed_mutations": 5,
+        "survival_rate": 0.375,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [2] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [2] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:45:50.094158",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [0] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [0] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmptqizze90.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptqizze90.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmptqizze90.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:45:50.392775",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 2)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 2)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:45:55.380503",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 0)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 0)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpp3j068sf.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpp3j068sf.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmpp3j068sf.py\", line 19, in largest_prime_factor\n    if isprime[i]:\n       ~~~~~~~^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-08-01T15:45:55.642387",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(3, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(3, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpetfq7z2y.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpetfq7z2y.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpetfq7z2y.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:45:56.067739",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 5,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(1, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(1, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp3f4xoxk1.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3f4xoxk1.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp3f4xoxk1.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:45:56.492805",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 6,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 2):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 2):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzaj4ge15.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpzaj4ge15.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmpzaj4ge15.py\", line 19, in largest_prime_factor\n    if isprime[i]:\n       ~~~~~~~^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-08-01T15:45:56.773096",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 7,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 0):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 0):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:45:59.467176",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 8,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = 1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = 1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp8_7cte8p.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8_7cte8p.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp8_7cte8p.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:45:59.655348",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 9,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = -1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = -1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvvjcrzrx.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvvjcrzrx.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvvjcrzrx.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:45:59.806604",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 18,
+        "mutations_tested": 10
+      },
+      "Add->Sub": {
+        "total_mutations": 2,
+        "killed_mutations": 1,
+        "survival_rate": 0.5,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n - 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n - 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpvr0ex75h.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpvr0ex75h.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmpvr0ex75h.py\", line 21, in largest_prime_factor\n    isprime[j] = False\n    ~~~~~~~^^^\nIndexError: list assignment index out of range\n",
+            "timestamp": "2025-08-01T15:45:59.959137",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n - 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n - 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:46:02.662175",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i - i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i - i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpldobugxr.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpldobugxr.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpldobugxr.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:02.825451",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "Sub->Add": {
+        "error": "division by zero"
+      },
+      "Mult->Div": {
+        "error": "division by zero"
+      },
+      "Mod->FloorDiv": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n // i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n // i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpkwftrfj8.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkwftrfj8.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpkwftrfj8.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:03.410582",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Mult->Pow": {
+        "error": "division by zero"
+      },
+      "Eq->NotEq": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i != 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i != 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpu0fyymr_.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu0fyymr_.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpu0fyymr_.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:03.920087",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "And->Or": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] or n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] or n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmps85qsl8i.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmps85qsl8i.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmps85qsl8i.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:04.126726",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove UnaryMinus": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, 1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, 1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpzl7lr8rh.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpzl7lr8rh.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpzl7lr8rh.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:04.359054",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Remove ReturnValue": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpe4itw5n6.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpe4itw5n6.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpe4itw5n6.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:04.604155",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "True->False": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [False] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [False] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmp44gl206y.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp44gl206y.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmp44gl206y.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:04.880247",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "False->True": {
+        "total_mutations": 1,
+        "killed_mutations": 1,
+        "survival_rate": 0.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = True\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = True\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmplpr8y0rm.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmplpr8y0rm.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmplpr8y0rm.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:05.106992",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "Zero->One": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = 1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = 1\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpfflq7z7_.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfflq7z7_.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpfflq7z7_.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:05.308372",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 1, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 1, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:46:08.351916",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 1:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 1:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpc13pvzwt.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpc13pvzwt.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpc13pvzwt.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:08.497152",
+            "status": "KILLED",
+            "reason": "test_failure"
+          }
+        ],
+        "mutation_count_available": 3,
+        "mutations_tested": 3
+      },
+      "One->Zero": {
+        "total_mutations": 3,
+        "killed_mutations": 2,
+        "survival_rate": 0.3333333333333333,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [0] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [0] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmpudshky09.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpudshky09.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmpudshky09.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:08.653234",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 1,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 0)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 0)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprznx2200.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprznx2200.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmprznx2200.py\", line 19, in largest_prime_factor\n    if isprime[i]:\n       ~~~~~~~^^^\nIndexError: list index out of range\n",
+            "timestamp": "2025-08-01T15:46:08.809562",
+            "status": "BROKEN",
+            "reason": "code_error"
+          },
+          {
+            "mutation_index": 2,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 0):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 0):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:46:11.618004",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          },
+          {
+            "mutation_index": 3,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 0, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 0, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmprng6zuy5.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprng6zuy5.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmprng6zuy5.py\", line 49, in assertion\n    assert exact_match\n           ^^^^^^^^^^^\nAssertionError\n",
+            "timestamp": "2025-08-01T15:46:11.822993",
+            "status": "KILLED",
+            "reason": "test_failure"
+          },
+          {
+            "mutation_index": 4,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -0):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -0):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": false,
+            "execution_output": "Traceback (most recent call last):\n  File \"/tmp/tmphjr2n0x5.py\", line 62, in <module>\n    check(largest_prime_factor)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/tmphjr2n0x5.py\", line 56, in check\n    assertion(candidate(*inp), exp, 0)\n              ~~~~~~~~~^^^^^^\n  File \"/tmp/tmphjr2n0x5.py\", line 22, in largest_prime_factor\n    for i in range(n - 1, 0, -0):\n             ~~~~~^^^^^^^^^^^^^^\nValueError: range() arg 3 must not be zero\n",
+            "timestamp": "2025-08-01T15:46:11.970621",
+            "status": "BROKEN",
+            "reason": "code_error"
+          }
+        ],
+        "mutation_count_available": 5,
+        "mutations_tested": 5
+      },
+      "String->Empty": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"\"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"\"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:46:14.497967",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "String->X": {
+        "total_mutations": 1,
+        "killed_mutations": 0,
+        "survival_rate": 1.0,
+        "detailed_mutations": [
+          {
+            "mutation_index": 0,
+            "original_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+            "mutated_code": "def largest_prime_factor(n: int):\n    \"\"\"X\"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "mutated_complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\ndef largest_prime_factor(n: int):\n    \"\"\"X\"\"\"\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i",
+            "execution_success": true,
+            "execution_output": "All tests passed!\n",
+            "timestamp": "2025-08-01T15:46:17.303477",
+            "status": "SURVIVED",
+            "reason": "tests_passed"
+          }
+        ],
+        "mutation_count_available": 1,
+        "mutations_tested": 1
+      },
+      "List->Empty": {
+        "error": "division by zero"
+      }
+    },
+    "problem_info": {
+      "prompt": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n",
+      "canonical_solution": "\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n",
+      "test_code": "\n\nimport numpy as np\n\ndef is_floats(x) -> bool:\n    # check if it is float; List[float]; Tuple[float]\n    if isinstance(x, float):\n        return True\n    if isinstance(x, (list, tuple)):\n        return all(isinstance(i, float) for i in x)\n    if isinstance(x, np.ndarray):\n        return x.dtype == np.float64 or x.dtype == np.float32\n    return False\n\n\ndef assertion(out, exp, atol):\n    exact_match = out == exp\n\n    if atol == 0 and is_floats(exp):\n        atol = 1e-6\n    if not exact_match and atol != 0:\n        assert np.allclose(out, exp, rtol=1e-07, atol=atol)\n    else:\n        assert exact_match\n\n\ndef check(candidate):\n    inputs = [[15], [27], [63], [330], [13195], [100], [256], [500], [873], [9999], [121], [1764], [4096], [243], [1024], [4097], [1765], [120], [501], [4095], [10000], [255], [1025], [4094], [242], [1763], [254], [9998], [872], [9997], [502], [119], [9996], [874], [253], [252], [1762], [122], [4098], [871], [1023], [9995], [870], [99], [98], [118], [1761], [117], [123], [10001], [87], [92], [869], [1766], [93], [875], [244], [9994], [1767], [1760], [124], [245], [116], [9], [88], [10], [86], [246], [85], [115], [247], [1022], [91], [248], [125], [94], [10002], [249], [1768], [876], [38], [868], [1020], [8], [1026], [90], [866], [39], [867], [9993], [1027], [9992], [1029], [1028], [40], [18], [60], [49], [95], [48], [114], [96], [72], [1030], [9991], [13433], [456745], [568623], [32767], [4], [6], [12], [21], [13432], [13434], [22], [32766], [13435], [20], [456744], [568622], [81], [456743], [456742], [13431], [32765], [80], [456741], [456746], [32764], [32763], [568621], [82], [568624], [32768], [13430], [456740], [13429], [456739], [32762], [32769], [456747], [14], [32761], [32770], [568620], [24], [52], [568625], [51], [456738], [30], [50], [32760], [13428], [13427], [1000000], [16], [25], [13436], [456749], [13437], [26], [456748], [568626], [13438], [13439], [456750], [456751], [456752], [28], [32759], [84], [456753], [65], [64]]\n    results = [5, 3, 7, 11, 29, 5, 2, 5, 97, 101, 11, 7, 2, 3, 2, 241, 353, 5, 167, 13, 5, 17, 41, 89, 11, 43, 127, 4999, 109, 769, 251, 17, 17, 23, 23, 7, 881, 61, 683, 67, 31, 1999, 29, 11, 7, 59, 587, 13, 41, 137, 29, 23, 79, 883, 31, 7, 61, 263, 31, 11, 31, 7, 29, 3, 11, 5, 43, 41, 17, 23, 19, 73, 13, 31, 5, 47, 1667, 83, 17, 73, 19, 31, 17, 2, 19, 5, 433, 13, 17, 3331, 79, 1249, 7, 257, 5, 3, 5, 7, 19, 3, 19, 3, 3, 103, 103, 101, 547, 17231, 151, 2, 3, 3, 7, 73, 2239, 11, 127, 2687, 5, 19031, 284311, 3, 919, 1597, 37, 6553, 5, 2671, 113, 8191, 163, 6389, 41, 5077, 2, 79, 557, 1033, 401, 16381, 331, 152249, 7, 181, 113, 13, 3, 13, 4549, 17, 76123, 5, 5, 13, 373, 463, 5, 2, 5, 3359, 5503, 1493, 13, 1283, 94771, 6719, 151, 29, 691, 28547, 7, 47, 7, 13841, 13, 2]\n    for i, (inp, exp) in enumerate(zip(inputs, results)):\n        assertion(candidate(*inp), exp, 0)\n",
+      "entry_point": "largest_prime_factor",
+      "complete_code": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n"
+    },
+    "execution_info": {
+      "max_mutations_per_operator": 10,
+      "total_operators_tested": 46,
+      "operators_with_mutations": 13,
+      "execution_timestamp": "2025-08-01T15:46:17.467408"
+    }
+  }
+}
